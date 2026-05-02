@@ -1,0 +1,35 @@
+{
+  "name": "@repo/email",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./emails": "./emails/index.ts",
+    "./keys": "./keys.ts"
+  },
+  "scripts": {
+    "dev": "email dev -p 3008",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "check-types": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@react-email/components": "1.0.8",
+    "@react-email/render": "^2.0.4",
+    "@repo/design-system": "workspace:*",
+    "@t3-oss/env-core": "^0.13.10",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "resend": "^6.9.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@react-email/preview-server": "5.2.8",
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react-email": "5.2.8",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "list": {
+    "title": "Bookings",
+    "description": "View and manage all your bookings",
+    "searchPlaceholder": "Search bookings...",
+    "empty": {
+      "title": "No bookings found",
+      "description": "There are no bookings available at the moment. Check back later."
+    },
+    "filter": {
+      "status": "Status",
+      "all": "All",
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled"
+    },
+    "notFound": "Booking not found",
+    "notFoundDescription": "The booking you are looking for does not exist or has been removed.",
+    "backToBookings": "Back to Bookings"
+  },
+  "details": {
+    "title": "Booking Details",
+    "description": "View and manage booking information",
+    "bookingInfo": "Booking Information",
+    "passengerDetails": "Passenger Details",
+    "viewPassenger": "View Passenger",
+    "tripDetails": "Trip Details",
+    "viewTrip": "View Trip",
+    "schedule": "Schedule",
+    "journey": "Journey"
+  },
+  "api": {
+    "success": {
+      "updated": "Booking updated successfully"
+    }
+  }
+}

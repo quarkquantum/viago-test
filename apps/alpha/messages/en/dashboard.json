@@ -1,0 +1,30 @@
+{
+  "title": "Dashboard",
+  "description": "Platform revenue overview and analytics",
+  "stats": {
+    "totalRevenue": "Total Revenue",
+    "totalRevenueDescription": "All-time platform revenue",
+    "todayRevenue": "Today's Revenue",
+    "todayRevenueDescription": "Revenue generated today",
+    "totalDrivers": "Total Drivers",
+    "totalDriversDescription": "Registered drivers",
+    "totalAgencies": "Total Agencies",
+    "totalAgenciesDescription": "Active carrier agencies",
+    "totalTickets": "Total Tickets",
+    "totalTicketsDescription": "Tickets purchased",
+    "totalPassengers": "Total Passengers",
+    "totalPassengersDescription": "Unique passengers"
+  },
+  "ticketStatusChart": "Tickets by Status",
+  "ticketStatus": {
+    "issued": "Issued",
+    "consumed": "Consumed",
+    "cancelled": "Cancelled",
+    "refunded": "Refunded",
+    "expired": "Expired",
+    "reserved": "Reserved"
+  },
+  "topAgencies": "Top 5 Agency Revenues",
+  "errorTitle": "Failed to load stats",
+  "errorDescription": "There was an error loading the dashboard. Please try again later."
+}

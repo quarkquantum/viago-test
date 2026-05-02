@@ -1,0 +1,39 @@
+{
+  "title": "Tableau de bord",
+  "stats": {
+    "totalBuses": "Total des bus",
+    "fleetSize": "Taille de la flotte",
+    "activeTrips": "Voyages actifs",
+    "activeTripsDesc": "{count} voyages en cours",
+    "completedTrips": "Voyages terminés",
+    "completedTripsDesc": "{count} voyages terminés",
+    "totalAgencies": "Total des transporteurs",
+    "registeredAgencies": "Transporteurs inscrits sur la plateforme",
+    "pendingRequests": "Demandes en attente",
+    "awaitingReview": "En attente de révision",
+    "suspendedAgencies": "Transporteurs suspendus",
+    "needAttention": "Nécessite attention",
+    "activeUsers": "Utilisateurs actifs",
+    "systemOperational": "Système opérationnel"
+  },
+  "sections": {
+    "activeBuses": "Bus actifs",
+    "onRouteBuses": "Bus actuellement en route",
+    "quickActions": "Actions rapides",
+    "quickActionsDesc": "Accédez rapidement aux fonctions principales",
+    "systemStatus": "État du système",
+    "systemStatusDesc": "Statut actuel de la plateforme"
+  },
+  "actions": {
+    "reviewRequests": "Examiner les demandes",
+    "manageAgencies": "Gérer les transporteurs"
+  },
+  "empty": {
+    "noUpcomingTrips": "Aucun voyage actif",
+    "noUpcomingTripsDesc": "Il n'y a pas de bus actuellement en voyage actif."
+  },
+  "cards": {
+    "unknown": "Inconnu",
+    "booked": "Réservé"
+  }
+}

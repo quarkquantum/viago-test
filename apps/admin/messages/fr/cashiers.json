@@ -1,0 +1,57 @@
+{
+  "list": {
+    "title": "Caissiers",
+    "description": "Consulter et gérer tous vos caissiers",
+    "searchPlaceholder": "Rechercher des caissiers...",
+    "empty": {
+      "title": "Aucun caissier trouvé",
+      "description": "Il n'y a aucun caissier disponible pour le moment."
+    },
+    "notFound": "Utilisateur non trouvé",
+    "notFoundDescription": "L'utilisateur que vous recherchez n'existe pas.",
+    "backToUsers": "Retour aux utilisateurs"
+  },
+  "details": {
+    "title": "Profil du caissier",
+    "description": "Consulter les informations de l'utilisateur et l'historique des réservations"
+  },
+  "create": {
+    "title": "Ajouter un nouveau caissier",
+    "description": "Remplissez le formulaire pour créer un nouveau caissier. Cliquez sur enregistrer lorsque vous avez terminé.",
+    "trigger": "Ajouter un nouveau caissier",
+    "submit": "Créer un caissier",
+    "selectAgency": "Sélectionner une agence ...",
+    "searchAgency": "Rechercher une agence ...",
+    "noTime": "Aucune heure définie",
+    "api": {
+      "error": {
+        "create_failed": "Échec de la création de l'utilisateur caissier",
+        "already_assigned": "Cet utilisateur est déjà assigné à cette agence"
+      }
+    }
+  },
+  "edit": {
+    "title": "Modifier le caissier",
+    "description": "Apportez des modifications à ce caissier ici. Cliquez sur enregistrer lorsque vous avez terminé.",
+    "submit": "Enregistrer les modifications",
+    "loading": "Chargement des données du caissier...",
+    "error": "Échec du chargement des données du caissier",
+    "notFound": "Aucune donnée de caissier trouvée"
+  },
+  "delete": {
+    "title": "Êtes-vous absolument sûr ?",
+    "description": "Cette action ne peut pas être annulée. Cela supprimera définitivement le compte du caissier et retirera son accès au système.",
+    "submit": "Maintenir pour supprimer",
+    "deleting": "Suppression en cours..."
+  },
+  "resetPassword": {
+    "trigger": "Envoyer le lien de réinitialisation"
+  },
+  "api": {
+    "success": {
+      "created": "Caissier créé avec succès",
+      "updated": "Caissier mis à jour avec succès",
+      "deleted": "Caissier supprimé avec succès"
+    }
+  }
+}

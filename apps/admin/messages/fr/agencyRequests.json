@@ -1,0 +1,25 @@
+{
+  "list": {
+    "title": "Demandes d'agence",
+    "description": "Voir et gérer les demandes d'enregistrement d'agence",
+    "searchPlaceholder": "Rechercher des demandes...",
+    "empty": {
+      "title": "Aucune demande trouvée",
+      "description": "Il n'y a aucune demande d'enregistrement d'agence pour le moment."
+    }
+  },
+  "status": {
+    "approved": "Approuvé",
+    "rejected": "Rejeté"
+  },
+  "actions": {
+    "approve": "Approuver",
+    "reject": "Rejeter"
+  },
+  "api": {
+    "success": {
+      "approved": "Demande d'agence approuvée avec succès",
+      "rejected": "Demande d'agence rejetée avec succès"
+    }
+  }
+}

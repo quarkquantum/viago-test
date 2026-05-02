@@ -1,0 +1,25 @@
+{
+  "list": {
+    "title": "Company of Transport Managers",
+    "description": "Manage company of transport managers and assign them to companies of transport",
+    "searchPlaceholder": "Search company of transport managers...",
+    "empty": {
+      "title": "No company of transport managers found",
+      "description": "There are no company of transport managers yet. Create one to get started."
+    }
+  },
+  "create": {
+    "title": "Add New Company of Transport Manager",
+    "description": "Fill in the details below to create a new company of transport manager. Login credentials will be sent automatically.",
+    "trigger": "Add Manager",
+    "submit": "Create Manager",
+    "agencyLabel": "Company of Transport",
+    "selectAgency": "Select company of transport ...",
+    "searchAgency": "Search company of transport ..."
+  },
+  "api": {
+    "success": {
+      "created": "Company of transport manager created successfully"
+    }
+  }
+}

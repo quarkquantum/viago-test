@@ -1,0 +1,86 @@
+{
+  "list": {
+    "title": "Carriers",
+    "description": "View and manage all your carriers",
+    "searchPlaceholder": "Search Carriers...",
+    "empty": {
+      "title": "No carriers found",
+      "description": "There are no carriers available at the moment."
+    },
+    "notFound": "Carrier not found",
+    "notFoundDescription": "You don't have a carrier associated with your account yet."
+  },
+  "details": {
+    "title": "Carrier Details",
+    "description": "View and manage carrier details",
+    "noDescription": "No description provided",
+    "ownerAccount": "Owner Account",
+    "agencyOwner": "Carrier Owner",
+    "activeVehicles": "Active vehicles",
+    "totalBuses": "Total Buses",
+    "registeredDrivers": "Registered drivers",
+    "totalDrivers": "Total Drivers",
+    "activeBuses": "Active Buses",
+    "activeBusesDescription": "List of active buses and their current status",
+    "viewAll": "View All",
+    "drivers": "Drivers",
+    "associatedDrivers": "Associated drivers",
+    "noBuses": "No buses found",
+    "noBusesDescription": "This carrier has no active buses at the moment.",
+    "noDrivers": "No drivers",
+    "noDriversDescription": "No drivers found.",
+    "booked": "booked",
+    "seats": "Seats",
+    "depot": "Depot",
+    "unknown": "Unknown",
+    "editAgency": "Edit Carrier",
+    "editAgencyDescription": "Make changes to this carrier here. Click save when you're done.",
+    "updateOwnerDetails": "Update Owner Details",
+    "selectOwner": "Select carrier owner ...",
+    "searchOwner": "Search carrier owner ..."
+  },
+  "create": {
+    "title": "Add New Carrier",
+    "description": "Fill the form to create a new carrier. Click save when you're done.",
+    "trigger": "Add New Carrier",
+    "submit": "Create Carrier",
+    "selectOwner": "Select owner ...",
+    "searchOwner": "Search owner ...",
+    "ownerNotFound": "No owner found.",
+    "selectStatus": "Select status ...",
+    "selectCountry": "Select country ...",
+    "searchCountry": "Search country ...",
+    "selectCity": "Select city ...",
+    "searchCity": "Search city ...",
+    "active": "Active",
+    "inactive": "Inactive",
+    "loading": "Loading...",
+    "agencyNamePlaceholder": "Carrier Name",
+    "agencyDescriptionPlaceholder": "Carrier Description",
+    "api": {
+      "error": {
+        "create_owner_failed": "Failed to create carrier owner user"
+      }
+    }
+  },
+  "edit": {
+    "title": "Update Carrier",
+    "description": "Fill the form to update carrier details. Click save when you're done.",
+    "submit": "Update Carrier"
+  },
+  "delete": {
+    "title": "Are you absolutely sure?",
+    "description": "This action cannot be undone. This will permanently delete the carrier and all associated data.",
+    "submit": "Hold to delete",
+    "deleting": "Deleting..."
+  },
+  "api": {
+    "success": {
+      "created": "Carrier created successfully",
+      "updated": "Carrier updated successfully",
+      "deleted": "Carrier deleted successfully",
+      "activated": "Carrier activated successfully",
+      "deactivated": "Carrier deactivated successfully"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+import { createAuthClient } from 'better-auth/client';
+import { customSessionClient, emailOTPClient } from 'better-auth/client/plugins';
+import { keys } from '../keys';
+import type { auth } from './server';
+
+export const appAuthClient = createAuthClient({
+  basePath: '/api/app/auth',
+  baseURL: keys().NEXT_PUBLIC_API_URL,
+  fetchOptions: {
+    credentials: 'include', // Required for sending cookies cross-origin
+  },
+  plugins: [emailOTPClient(), customSessionClient<typeof auth>()],
+});

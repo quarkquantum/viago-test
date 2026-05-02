@@ -1,0 +1,348 @@
+{
+  "common": {
+    "api": {
+      "error": {
+        "bad_request": "Requête invalide",
+        "unauthorized": "Authentification requise",
+        "forbidden": "Accès interdit",
+        "not_found": "Ressource non trouvée",
+        "internal_server_error": "Erreur interne du serveur",
+        "validation_error": "Erreur de validation, vérifiez vos données",
+        "unexpected_error": "Une erreur inattendue est survenue",
+        "database_error": "Une erreur de base de données est survenue",
+        "internal_error": "Une erreur interne est survenue. Veuillez réessayer plus tard."
+      },
+      "success": {
+        "operation_completed": "Opération effectuée avec succès"
+      }
+    },
+    "fields": {
+      "email": "adresse e-mail",
+      "password": "mot de passe",
+      "fullName": "nom complet",
+      "phoneNumber": "numéro de téléphone",
+      "firstName": "prénom",
+      "lastName": "nom de famille"
+    }
+  },
+  "admin": {
+    "api": {
+      "error": {
+        "create_failed": "Échec de la création de l'administrateur",
+        "not_found": "Administrateur non trouvé",
+        "delete_failed": "Échec de la suppression de l'administrateur",
+        "update_failed": "Échec de la mise à jour de l'administrateur",
+        "retrieve_failed": "Échec de la récupération des administrateurs",
+        "retrieve_details_failed": "Échec de la récupération des détails de l'administrateur"
+      },
+      "success": {
+        "deleted": "Administrateur supprimé avec succès"
+      }
+    }
+  },
+  "agency": {
+    "api": {
+      "error": {
+        "create_owner_failed": "Échec de la création du propriétaire de l'agence",
+        "not_found": "Agence non trouvée",
+        "retrieve_failed": "Échec de la récupération des agences",
+        "retrieve_details_failed": "Échec de la récupération des détails de l'agence",
+        "create_failed": "Échec de la création de l'agence",
+        "update_failed": "Échec de la mise à jour de l'agence",
+        "activate_failed": "Échec de l'activation de l'agence",
+        "deactivate_failed": "Échec de la désactivation de l'agence",
+        "delete_failed": "Échec de la suppression de l'agence"
+      },
+      "success": {
+        "created": "Agence créée avec succès",
+        "updated": "Agence modifiée avec succès",
+        "activated": "Agence activée avec succès",
+        "deactivated": "Agence désactivée avec succès",
+        "deleted": "Agence supprimée avec succès",
+        "already_active": "L'agence est déjà active",
+        "already_inactive": "L'agence est déjà inactive"
+      }
+    }
+  },
+  "booking": {
+    "api": {
+      "error": {
+        "no_available_seats": "Aucune place disponible pour ce voyage",
+        "not_found": "Réservation non trouvée",
+        "seat_not_available_for_stations": "La place sélectionnée n'est pas disponible pour ces arrêts",
+        "station_not_belong_to_trip": "Un des arrêts n'appartient pas à ce voyage",
+        "station_not_found": "Arrêt non trouvé",
+        "stations_not_ordered": "Les arrêts ne sont pas correctement ordonnés",
+        "seat_required_for_numbered_bus": "Un siège doit être sélectionné pour les bus numérotés"
+      },
+      "success": {
+        "created": "Réservation créée avec succès",
+        "deleted": "Réservation supprimée avec succès",
+        "updated": "Réservation modifiée avec succès"
+      }
+    }
+  },
+  "bus": {
+    "api": {
+      "error": {
+        "agency_not_found": "Agence non trouvée",
+        "assigned_to_active_trips": "Impossible de supprimer un bus assigné à des voyages en cours",
+        "not_found": "Bus non trouvé",
+        "update_seat_active_trips": "Impossible de modifier la capacité pendant des voyages en cours",
+        "retrieve_failed": "Échec de la récupération des bus",
+        "retrieve_details_failed": "Échec de la récupération des détails du bus",
+        "create_failed": "Échec de la création du bus",
+        "update_failed": "Échec de la mise à jour du bus",
+        "delete_failed": "Échec de la suppression du bus"
+      },
+      "success": {
+        "created": "Bus créé avec succès",
+        "deleted": "Bus supprimé avec succès",
+        "updated": "Bus mis à jour avec succès"
+      }
+    }
+  },
+  "cashier": {
+    "api": {
+      "error": {
+        "create_failed": "Échec de la création du caissier",
+        "not_found": "Caissier non trouvé",
+        "retrieve_failed": "Échec de la récupération des caissiers",
+        "retrieve_details_failed": "Échec de la récupération des détails du caissier",
+        "update_failed": "Échec de la mise à jour du caissier",
+        "delete_failed": "Échec de la suppression du caissier"
+      },
+      "success": {
+        "deleted": "Caissier supprimé avec succès",
+        "updated": "Caissier modifié avec succès",
+        "created": "Caissier créé avec succès"
+      }
+    }
+  },
+  "city": {
+    "api": {
+      "error": {
+        "not_found": "Ville non trouvée",
+        "retrieve_failed": "Échec de la récupération des villes"
+      }
+    }
+  },
+  "driver": {
+    "api": {
+      "error": {
+        "create_failed": "Échec de la création du chauffeur",
+        "not_found": "Chauffeur non trouvé",
+        "retrieve_failed": "Échec de la récupération des chauffeurs",
+        "retrieve_details_failed": "Échec de la récupération des détails du chauffeur",
+        "update_failed": "Échec de la mise à jour du chauffeur",
+        "delete_failed": "Échec de la suppression du chauffeur"
+      },
+      "success": {
+        "created": "Chauffeur créé avec succès",
+        "deleted": "Chauffeur supprimé avec succès",
+        "updated": "Chauffeur mis à jour avec succès"
+      }
+    }
+  },
+  "passenger": {
+    "api": {
+      "error": {
+        "create_failed": "Échec de la création du passager",
+        "not_found": "Passager non trouvé",
+        "retrieve_failed": "Échec de la récupération des passagers",
+        "retrieve_details_failed": "Échec de la récupération des détails du passager",
+        "update_failed": "Échec de la mise à jour du passager",
+        "delete_failed": "Échec de la suppression du passager"
+      },
+      "success": {
+        "created": "Passager créé avec succès",
+        "deleted": "Passager supprimé avec succès",
+        "updated": "Passager mis à jour avec succès"
+      }
+    }
+  },
+  "payment": {
+    "api": {
+      "error": {
+        "already_initiated": "Paiement déjà initié pour cette réservation",
+        "transaction_not_found": "Transaction non trouvée",
+        "unauthorized_pay": "Vous n'êtes pas autorisé à payer cette réservation",
+        "unauthorized_view": "Vous n'êtes pas autorisé à voir cette transaction",
+        "missing_reference": "Référence manquante",
+        "provider_error": "Erreur du fournisseur de paiement"
+      },
+      "success": {
+        "initialized": "Paiement initialisé avec succès",
+        "webhook_processed": "Webhook traité avec succès"
+      }
+    }
+  },
+  "station": {
+    "api": {
+      "error": {
+        "cannot_mark_as_active": "Impossible de marquer l'arrêt comme actif",
+        "cannot_mark_as_boarding": "Impossible de marquer l'arrêt comme en embarquement",
+        "cannot_mark_as_completed": "Impossible de marquer l'arrêt comme terminé",
+        "existing_station_order": "Un arrêt avec cet ordre existe déjà",
+        "not_found": "Arrêt non trouvé",
+        "station_used_in_bookings": "Impossible de supprimer un arrêt utilisé dans des réservations",
+        "stations_not_ordered": "Les arrêts ne sont pas correctement ordonnés",
+        "trip": {
+          "not_found": "Voyage non trouvé pour cet arrêt"
+        }
+      },
+      "success": {
+        "created": "Arrêt créé avec succès",
+        "updated": "Arrêt modifié avec succès",
+        "deleted": "Arrêt supprimé avec succès"
+      }
+    }
+  },
+  "stats": {
+    "api": {
+      "error": {
+        "retrieve_failed": "Échec de la récupération des statistiques"
+      }
+    }
+  },
+  "dashboard": {
+    "api": {
+      "error": {
+        "retrieve_stats_failed": "Échec de la récupération des statistiques du tableau de bord"
+      }
+    }
+  },
+  "ticket": {
+    "api": {
+      "error": {
+        "cannot_cancel": "Le billet ne peut pas être annulé",
+        "cannot_refund": "Le billet ne peut pas être remboursé",
+        "not_reserved": "Le billet n'est pas réservé",
+        "cashier_creation_disabled": "La création de billets est désactivée pour les comptes d'agence.",
+        "forbidden": "Vous n'avez pas la permission d'accéder à ce billet",
+        "from_station_not_found": "Arrêt de départ non trouvé",
+        "invalid_ticket": "Billet invalide",
+        "not_found": "Billet non trouvé",
+        "passenger_not_found": "Passager non trouvé",
+        "refund_too_late": "La période de remboursement est dépassée",
+        "seat_not_available": "La place sélectionnée n'est plus disponible",
+        "seat_not_found": "Place non trouvée",
+        "station_not_found": "Arrêt non trouvé",
+        "to_station_not_found": "Arrêt de destination non trouvé",
+        "trip_completed": "Le voyage est déjà terminé",
+        "trip_deleted": "Le voyage a été supprimé",
+        "trip_not_found": "Voyage non trouvé",
+        "seat_required_for_numbered_bus": "Un siège doit être sélectionné pour les bus numérotés",
+        "unauthorized": "Vous devez être connecté pour accéder à ce billet",
+        "retrieve_failed": "Échec de la récupération des billets",
+        "retrieve_history_failed": "Échec de la récupération de l'historique des billets",
+        "retrieve_details_failed": "Échec de la récupération des détails du billet",
+        "update_failed": "Échec de la mise à jour du billet",
+        "delete_failed": "Échec de la suppression du billet",
+        "refund_failed": "Échec du remboursement du billet",
+        "create_failed": "Échec de la création du billet",
+        "no_available_seats": "Aucune place disponible"
+      },
+      "success": {
+        "created": "Billet créé avec succès",
+        "deleted": "Billet supprimé avec succès",
+        "fetched": "Billet récupéré avec succès",
+        "cancelled": "Billet annulé avec succès",
+        "refunded": "Billet remboursé avec succès",
+        "updated": "Billet mis à jour avec succès",
+        "scanned": "Billet scanné avec succès",
+        "sold": "Billet vendu avec succès",
+        "reserved": "Réservation créée avec succès",
+        "paid": "Paiement encaissé avec succès"
+      }
+    }
+  },
+  "trip": {
+    "api": {
+      "error": {
+        "cannot_complete": "Impossible de terminer le voyage",
+        "cannot_start": "Impossible de démarrer le voyage",
+        "end_station_not_found": "Arrêt de fin non trouvé",
+        "existing": "Un voyage avec ce nom existe déjà",
+        "not_found": "Voyage non trouvé",
+        "start_station_not_found": "Arrêt de départ non trouvé",
+        "bus_busy": "Le bus est déjà assigné à un voyage actif pendant cette période",
+        "driver_busy": "Le chauffeur n'est pas disponible pendant cette période",
+        "retrieve_failed": "Échec de la récupération des voyages",
+        "retrieve_details_failed": "Échec de la récupération des détails du voyage",
+        "retrieve_station_pairs_failed": "Échec de la récupération des paires d'arrêts",
+        "create_failed": "Échec de la création du voyage",
+        "update_failed": "Échec de la mise à jour du voyage",
+        "delete_failed": "Échec de la suppression du voyage"
+      },
+      "success": {
+        "created": "Voyage créé avec succès",
+        "deleted": "Voyage supprimé avec succès",
+        "updated": "Voyage modifié avec succès"
+      }
+    }
+  },
+  "user": {
+    "api": {
+      "error": {
+        "create_failed": "Échec de la création de l'utilisateur",
+        "not_found": "Utilisateur non trouvé",
+        "retrieve_failed": "Échec de la récupération des utilisateurs",
+        "retrieve_details_failed": "Échec de la récupération des détails de l'utilisateur",
+        "update_failed": "Échec de la mise à jour de l'utilisateur",
+        "delete_failed": "Échec de la suppression de l'utilisateur",
+        "ban_failed": "Échec du bannissement de l'utilisateur",
+        "unban_failed": "Échec du débannissement de l'utilisateur",
+        "reset_password_sent_failed": "Échec de l'envoi de l'e-mail de réinitialisation du mot de passe",
+        "reset_password_failed": "Échec de la réinitialisation du mot de passe",
+        "list_sessions_failed": "Échec de la récupération des sessions utilisateur",
+        "revoke_session_failed": "Échec de la révocation de la session utilisateur"
+      },
+      "success": {
+        "created": "Utilisateur créé avec succès",
+        "reset_password_sent": "E-mail de réinitialisation du mot de passe envoyé avec succès",
+        "updated": "Profil mis à jour avec succès"
+      }
+    }
+  },
+  "report": {
+    "api": {
+      "error": {
+        "no_active_booking": "Vous n'avez pas de réservation active pour ce voyage"
+      },
+      "success": {
+        "created": "Signalement soumis avec succès"
+      }
+    }
+  },
+  "me": {
+    "api": {
+      "success": {
+        "updated": "Profil mis à jour avec succès"
+      },
+      "error": {
+        "update_failed": "Échec de la mise à jour du profil",
+        "retrieve_failed": "Échec de la récupération du profil"
+      }
+    }
+  },
+  "agencyRequest": {
+    "api": {
+      "error": {
+        "not_found": "Demande d'agence non trouvée",
+        "duplicate_pending": "Une demande en attente existe déjà pour cet email",
+        "already_approved": "Cette demande a déjà été approuvée",
+        "already_rejected": "Cette demande a déjà été rejetée",
+        "not_pending": "Seules les demandes en attente peuvent être traitées",
+        "create_failed": "Échec de la création de la demande d'agence",
+        "approve_failed": "Échec de l'approbation de la demande d'agence",
+        "reject_failed": "Échec du rejet de la demande d'agence"
+      },
+      "success": {
+        "created": "Demande d'agence soumise avec succès",
+        "approved": "Demande d'agence approuvée avec succès",
+        "rejected": "Demande d'agence rejetée avec succès"
+      }
+    }
+  }
+}

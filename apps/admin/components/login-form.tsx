@@ -1,0 +1,126 @@
+'use client';
+
+import { adminAuthClient } from '@repo/auth/admin/client';
+import Logo from '@repo/design-system/web/src/assets/logo-icon.svg';
+import { Button } from '@repo/design-system/web/src/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader } from '@repo/design-system/web/src/components/ui/card';
+import { Input } from '@repo/design-system/web/src/components/ui/input';
+import { Label } from '@repo/design-system/web/src/components/ui/label';
+import { Loader2 } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { toast } from 'sonner';
+
+import { useTranslations } from 'next-intl';
+
+export const LoginForm = () => {
+  const t = useTranslations('auth');
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    console.log('[login] Attempting login with email:', email);
+    await adminAuthClient.signIn.email(
+      {
+        email,
+        password,
+      },
+      {
+        onError: (ctx) => {
+          console.log('[login] Error:', ctx.error);
+          toast.error(ctx.error.message);
+          setLoading(false);
+        },
+        onSuccess: async (ctx) => {
+          console.log('[login] Success ctx.data:', ctx.data);
+          console.log('[login] twoFactorEnabled:', ctx.data.twoFactorEnabled);
+          console.log('[login] twoFactorRedirect:', ctx.data.twoFactorRedirect);
+          console.log('[login] Cookie before 2FA check:', document.cookie);
+
+          if (ctx.data.twoFactorRedirect) {
+            console.log('[login] 2FA required, sending OTP...');
+            const { data } = await adminAuthClient.twoFactor.sendOtp();
+            console.log('[login] sendOtp result:', data);
+            console.log('[login] Cookie after sendOtp:', document.cookie);
+            if (data?.status) {
+              toast.success(t('otpSent'));
+              router.push('/otp-verification');
+              setLoading(false);
+              return;
+            }
+          }
+
+          console.log('[login] No 2FA, redirecting to /');
+          setLoading(false);
+          console.log('[login] Waiting for cookie to be set...');
+          await new Promise((r) => setTimeout(r, 1000));
+          console.log('[login] All cookies:', document.cookie);
+          console.log('[login] Now redirecting');
+          window.location.href = '/fr/';
+        },
+      }
+    );
+  };
+
+  return (
+    <Card className="w-full max-w-sm py-12">
+      <CardHeader className="flex flex-col items-center justify-center gap-2">
+        <Image alt="logo" className="mb-4" src={Logo} />
+        <h1 className="font-bold text-2xl">{t('loginTitle')}</h1>
+        <CardDescription>{t('loginDescription')}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit}>
+          <div className="flex flex-col gap-6">
+            <div className="grid gap-2">
+              <Label htmlFor="email">{t('email')}</Label>
+              <Input
+                id="email"
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="m@example.com"
+                required
+                type="email"
+                value={email}
+              />
+            </div>
+            <div className="grid gap-2">
+              <div className="flex items-center">
+                <Label htmlFor="password">{t('password')}</Label>
+                <Link
+                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                  href="/forgot-password"
+                >
+                  {t('forgotPasswordPrompt')}
+                </Link>
+              </div>
+              <Input
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="********"
+                required
+                type="password"
+                value={password}
+              />
+            </div>
+            <Button className="w-full" disabled={loading} type="submit">
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 size-4 animate-spin" />
+                  {t('loggingIn')}
+                </>
+              ) : (
+                t('login')
+              )}
+            </Button>
+          </div>
+        </form>
+      </CardContent>
+    </Card>
+  );
+};

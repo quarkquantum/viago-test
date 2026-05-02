@@ -1,0 +1,25 @@
+{
+  "list": {
+    "title": "Gestionnaires de Compagnie de Transport",
+    "description": "Gérer les gestionnaires de Compagnie de Transport et les affecter aux Compagnies de Transport",
+    "searchPlaceholder": "Rechercher des gestionnaires de Compagnie de Transport...",
+    "empty": {
+      "title": "Aucun gestionnaire de Compagnie de Transport trouvé",
+      "description": "Il n'y a pas encore de gestionnaire de Compagnie de Transport. Créez-en un pour commencer."
+    }
+  },
+  "create": {
+    "title": "Ajouter un gestionnaire de Compagnie de Transport",
+    "description": "Remplissez les détails ci-dessous pour créer un gestionnaire de Compagnie de Transport. Les identifiants de connexion seront envoyés automatiquement.",
+    "trigger": "Ajouter un gérant",
+    "submit": "Créer le gérant",
+    "agencyLabel": "Compagnie de Transport",
+    "selectAgency": "Sélectionner une Compagnie de Transport ...",
+    "searchAgency": "Rechercher une Compagnie de Transport ..."
+  },
+  "api": {
+    "success": {
+      "created": "Gestionnaire de Compagnie de Transport créé avec succès"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "list": {
+    "title": "Agency Requests",
+    "description": "View and manage agency registration requests",
+    "searchPlaceholder": "Search requests...",
+    "empty": {
+      "title": "No requests found",
+      "description": "There are no agency registration requests at the moment."
+    }
+  },
+  "status": {
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "actions": {
+    "approve": "Approve",
+    "reject": "Reject"
+  },
+  "api": {
+    "success": {
+      "approved": "Agency request approved successfully",
+      "rejected": "Agency request rejected successfully"
+    }
+  }
+}

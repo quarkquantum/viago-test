@@ -1,0 +1,16 @@
+[
+  {
+    "code": "cm",
+    "name": "Cameroon",
+    "nativeName": "Cameroon",
+    "dialingCode": "237",
+    "languages": [
+      {
+        "languageCode": "en"
+      },
+      {
+        "languageCode": "fr"
+      }
+    ]
+  }
+]

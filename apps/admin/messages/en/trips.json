@@ -1,0 +1,86 @@
+{
+  "list": {
+    "title": "Trips",
+    "description": "View and manage all your trips",
+    "searchPlaceholder": "Search Trips...",
+    "empty": {
+      "title": "No trips found",
+      "description": "There are no trips available at the moment. Check back later."
+    },
+    "backToTrips": "Back to Trips"
+  },
+  "details": {
+    "title": "Trip Details",
+    "description": "View and manage trip details",
+    "stationsRoute": "Stations Route",
+    "totalStops": "Total Stops",
+    "priceRange": "Price Range",
+    "noStationsYet": "No stations defined yet",
+    "noStationsYetDescription": "The agency manager has not yet configured the stations for this trip.",
+    "start": "Start",
+    "end": "End",
+    "route": "Route",
+    "searchPassenger": "Search passenger...",
+    "manageBookings": "Manage bookings for this trip",
+    "noBookings": "No bookings found",
+    "noBookingsDescription": "There are no bookings available at the moment. Check back later."
+  },
+  "fields": {
+    "seatReservationType": "Seat Reservation Type",
+    "seatReservation": "Seat Reservation",
+    "noSeatReservation": "No Seat Reservation"
+  },
+  "create": {
+    "title": "Add New Trip",
+    "description": "Fill in the details below to create a new trip.",
+    "trigger": "Add New Trip",
+    "submit": "Create Trip",
+    "selectAgency": "Select agency ...",
+    "searchAgency": "Search agency ...",
+    "selectBus": "Select bus ...",
+    "searchBus": "Search bus ...",
+    "selectDriver": "Select driver ...",
+    "searchDriver": "Search driver ...",
+    "tripNamePlaceholder": "Trip Name",
+    "tripDescriptionPlaceholder": "Trip Description",
+    "departureCity": "Departure City",
+    "arrivalCity": "Arrival City",
+    "selectDepartureCity": "Select departure city ...",
+    "selectArrivalCity": "Select arrival city ...",
+    "searchCity": "Search city ...",
+    "stationName": "Station Name",
+    "selectCity": "Select City",
+    "price": "Price",
+    "enterPrice": "Enter Price",
+    "selectDate": "Select date",
+    "time": "Time",
+    "action": "Action",
+    "stations": "Stations",
+    "noStations": "No stations added yet",
+    "addMinStations": "Add at least 2 stations to create a trip",
+    "departureTimeAfterPrevious": "Departure time must be after the previous station."
+  },
+  "edit": {
+    "title": "Update Trip",
+    "description": "Fill in the details below to update trip details.",
+    "submit": "Update Trip",
+    "confirmDescription": "Are you sure you want to update this trip with {count} stations?"
+  },
+  "delete": {
+    "title": "Are you absolutely sure?",
+    "description": "This action cannot be undone. This will permanently delete the trip and all associated data.",
+    "stations": "{count} stations",
+    "bookings": "{count} bookings and their associated tickets",
+    "transactions": "Associated transaction records",
+    "calculating": "Calculating associated data...",
+    "submit": "Hold to delete",
+    "deleting": "Deleting..."
+  },
+  "api": {
+    "success": {
+      "created": "Trip created successfully",
+      "updated": "Trip updated successfully",
+      "deleted": "Trip deleted successfully"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "agencyManager": {
+    "title": "Company of Transport Managers",
+    "addNew": "Add New Company of Transport Manager",
+    "addDescription": "Fill the form to create a new company of transport manager account. Click save when you're done.",
+    "edit": "Edit",
+    "editTitle": "Edit Company of Transport Manager",
+    "editDescription": "Modify the company of transport manager details. Click save when you're done.",
+    "deleting": "Deleting...",
+    "holdToDelete": "Hold to delete",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "agency": "Company of Transport",
+    "selectAgency": "Select company of transport...",
+    "status": "Status",
+    "selectStatus": "Select status...",
+    "statusActive": "Active",
+    "statusInactive": "Inactive",
+    "invalidEmail": "Invalid email address.",
+    "firstNameRequired": "First name is required.",
+    "lastNameRequired": "Last name is required.",
+    "phoneNumberRequired": "Phone number is required.",
+    "agencyRequired": "Company of Transport is required.",
+    "creating": "Creating...",
+    "updating": "Updating...",
+    "create": "Create",
+    "update": "Update",
+    "listTitle": "Company of Transport Managers",
+    "listDescription": "View and manage company of transport managers",
+    "searchPlaceholder": "Search company of transport managers...",
+    "noAgencyManagers": "No company of transport managers found",
+    "noAgencyManagersDescription": "There are no company of transport managers at the moment.",
+    "table": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "agency": "Company of Transport",
+      "status": "Status",
+      "action": "Action"
+    },
+    "filter": {
+      "status": "Status",
+      "all": "All",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "deleteDescription": "Are you sure you want to delete this company of transport manager? This action cannot be undone.",
+    "success": {
+      "created": "Company of transport manager created successfully",
+      "updated": "Company of transport manager updated successfully",
+      "deleted": "Company of transport manager deleted successfully"
+    }
+  }
+}

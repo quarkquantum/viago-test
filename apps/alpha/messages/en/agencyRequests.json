@@ -1,0 +1,25 @@
+{
+  "list": {
+    "title": "Carrier Requests",
+    "description": "View and manage carrier registration requests",
+    "searchPlaceholder": "Search requests...",
+    "empty": {
+      "title": "No requests found",
+      "description": "There are no carrier registration requests at the moment."
+    }
+  },
+  "status": {
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "actions": {
+    "approve": "Approve",
+    "reject": "Reject"
+  },
+  "api": {
+    "success": {
+      "approved": "Carrier request approved successfully",
+      "rejected": "Carrier request rejected successfully"
+    }
+  }
+}

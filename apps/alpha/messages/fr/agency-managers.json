@@ -1,0 +1,57 @@
+{
+  "agencyManager": {
+    "title": "Gestionnaires de Compagnie de Transport",
+    "addNew": "Ajouter un gestionnaire",
+    "addDescription": "Remplissez le formulaire pour créer un nouveau compte gestionnaire de compagnie de transport. Cliquez sur enregistrer lorsque vous avez terminé.",
+    "edit": "Modifier",
+    "editTitle": "Modifier le gestionnaire de Compagnie de Transport",
+    "editDescription": "Modifiez les détails du gestionnaire de compagnie de transport. Cliquez sur enregistrer lorsque vous avez terminé.",
+    "deleting": "Suppression...",
+    "holdToDelete": "Maintenir pour supprimer",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "emailAddress": "Adresse e-mail",
+    "phoneNumber": "Numéro de téléphone",
+    "agency": "Compagnie de Transport",
+    "selectAgency": "Sélectionner une compagnie de transport...",
+    "status": "Statut",
+    "selectStatus": "Sélectionner le statut...",
+    "statusActive": "Actif",
+    "statusInactive": "Inactif",
+    "invalidEmail": "Adresse e-mail invalide.",
+    "firstNameRequired": "Le prénom est requis.",
+    "lastNameRequired": "Le nom est requis.",
+    "phoneNumberRequired": "Le numéro de téléphone est requis.",
+    "agencyRequired": "La compagnie de transport est requise.",
+    "creating": "Création...",
+    "updating": "Mise à jour...",
+    "create": "Créer",
+    "update": "Mettre à jour",
+    "listTitle": "Gestionnaires de Compagnie de Transport",
+    "listDescription": "Gérer les gestionnaires de Compagnie de Transport",
+    "searchPlaceholder": "Rechercher des gestionnaires...",
+    "noAgencyManagers": "Aucun gestionnaire trouvé",
+    "noAgencyManagersDescription": "Il n'y a aucun gestionnaire de compagnie de transport pour le moment.",
+    "table": {
+      "name": "Nom",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "agency": "Compagnie de Transport",
+      "status": "Statut",
+      "action": "Action"
+    },
+    "filter": {
+      "status": "Statut",
+      "all": "Tous",
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "deleteDescription": "Êtes-vous sûr de vouloir supprimer ce gestionnaire de compagnie de transport ? Cette action est irréversible.",
+    "success": {
+      "created": "Gestionnaire de compagnie de transport créé avec succès",
+      "updated": "Gestionnaire de compagnie de transport mis à jour avec succès",
+      "deleted": "Gestionnaire de compagnie de transport supprimé avec succès"
+    }
+  }
+}

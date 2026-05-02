@@ -1,0 +1,16 @@
+{
+  "title": "Recherche Rapide",
+  "description": "Trouvez un billet par ID",
+  "fields": {
+    "ticketId": "ID du billet"
+  },
+  "placeholders": {
+    "ticketId": "Entrez l'ID du billet..."
+  },
+  "notFound": "Billet non trouvé",
+  "ticketInfo": "Informations sur le billet",
+  "passengerInfo": "Informations sur le passager",
+  "seat": "Siège",
+  "total": "Total",
+  "bookedOn": "Réservé le"
+}

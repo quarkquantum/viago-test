@@ -1,0 +1,20 @@
+import type { InferRequestType, InferResponseType } from '@repo/server/rpc';
+import { useQuery } from '@tanstack/react-query';
+import { ApiError } from '@repo/shared';
+import { client } from '@/lib/hono';
+
+type ResponseType = InferResponseType<typeof client.api.agency.cashiers.$get>;
+type RequestType = InferRequestType<typeof client.api.agency.cashiers.$get>['query'];
+export type Cashier = ResponseType['data'][number];
+
+export const useListCashiers = (query: RequestType = {}) =>
+  useQuery<ResponseType, Error>({
+    queryFn: async () => {
+      const response = await client.api.agency.cashiers.$get({ query });
+      if (!response.ok) {
+        throw await ApiError.handleResponse(response);
+      }
+      return await response.json();
+    },
+    queryKey: ['cashiers', query],
+  });

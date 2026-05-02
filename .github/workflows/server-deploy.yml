@@ -1,0 +1,17 @@
+name: Deploy Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-dokploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Dokploy redeploy
+        run: |
+          curl --fail --show-error --silent --location \
+            "http://135.125.159.234:3000/api/deploy/qkZIPBqHZSe0rVW0W0na1"
+          echo "Dokploy deploy trigger sent."

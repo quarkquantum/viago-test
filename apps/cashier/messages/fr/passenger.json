@@ -1,0 +1,98 @@
+{
+  "common": {
+    "welcome": "Bienvenue",
+    "greetings": {
+      "morning": "Bonjour",
+      "afternoon": "Bon après-midi",
+      "evening": "Bonsoir"
+    },
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "create": "Créer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "actions": "Actions",
+    "view": "Voir",
+    "viewAll": "Voir tout",
+    "back": "Retour",
+    "backToTickets": "Retour aux billets",
+    "backToTrips": "Retour aux voyages",
+    "status": {
+      "verified": "Vérifié",
+      "notVerified": "Non vérifié",
+      "all": "Tous",
+      "label": "Statut",
+      "active": "Actif",
+      "completed": "Terminé",
+      "issued": "Émis",
+      "refunded": "Remboursé",
+      "cancelled": "Annulé",
+      "expired": "Expiré"
+    },
+    "table": {
+      "trip": "Voyage",
+      "description": "Description",
+      "status": "Statut",
+      "seat": "Siège",
+      "price": "Prix",
+      "createdAt": "Créé le",
+      "action": "Action",
+      "tripName": "Nom du voyage",
+      "availableSeats": "Sièges disponibles",
+      "departureTime": "Heure de départ",
+      "arrivalTime": "Heure d'arrivée",
+      "ticketId": "ID du billet",
+      "passenger": "Passager",
+      "departure": "Départ",
+      "from": "De",
+      "to": "À",
+      "seats": "Sièges",
+      "agency": "Agence"
+    },
+    "empty": {
+      "noData": "Aucune donnée disponible",
+      "noTickets": "Aucun billet trouvé",
+      "noTrips": "Aucun voyage trouvé",
+      "checkBackLater": "Il n'y a aucun élément disponible pour le moment. Revenez plus tard."
+    },
+    "navigation": {
+      "dashboard": "Tableau de bord",
+      "trips": "Voyages",
+      "tickets": "Billets"
+    }
+  },
+  "profile": {
+    "title": "Profil du passager",
+    "description": "Voir les informations du passager et l'historique des billets",
+    "personalInfo": {
+      "title": "Informations personnelles",
+      "description": "Informations de base sur le passager",
+      "fullName": "Nom complet",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone"
+    },
+    "accountDetails": {
+      "title": "Détails du compte",
+      "description": "Aperçu de l'activité du passager",
+      "totalTickets": "Total des billets",
+      "memberSince": "Membre depuis",
+      "status": "Statut"
+    },
+    "history": {
+      "title": "Historique des billets",
+      "description": "Tous les billets achetés par ce passager"
+    }
+  },
+  "notFound": {
+    "title": "Passager introuvable",
+    "description": "Le passager que vous recherchez n'existe pas."
+  },
+  "empty": {
+    "description": "Ce passager n'a pas encore acheté de billet."
+  }
+}
