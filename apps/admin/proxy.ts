@@ -1,18 +1,22 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import createIntlMiddleware from 'next-intl/middleware';
-import { env } from './env';
 import { routing } from './i18n/routing';
 
 const intlMiddleware = createIntlMiddleware(routing);
 const LOCALE_PATTERN = /^\/(en|fr)(\/|$)/;
 
+// Read internal API URL from environment at runtime
+const getInternalApiUrl = () => {
+  return process.env.API_INTERNAL_URL || 'http://localhost:3000';
+};
+
 async function getUserSession(request: NextRequest) {
   const cookies = request.headers.get('cookie');
   console.log('[proxy] getUserSession - cookies:', cookies);
-  console.log('[proxy] getUserSession - URL:', `${env.API_INTERNAL_URL}/api/admin/auth/get-session`);
+  console.log('[proxy] getUserSession - URL:', `${getInternalApiUrl()}/api/admin/auth/get-session`);
   try {
-    const response = await fetch(`${env.API_INTERNAL_URL}/api/admin/auth/get-session`, {
+    const response = await fetch(`${getInternalApiUrl()}/api/admin/auth/get-session`, {
       headers: {
         cookie: cookies || '',
       },
