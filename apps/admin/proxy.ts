@@ -14,9 +14,10 @@ const getInternalApiUrl = () => {
 async function getUserSession(request: NextRequest) {
   const cookies = request.headers.get('cookie');
   console.log('[proxy] getUserSession - cookies:', cookies);
-  console.log('[proxy] getUserSession - URL:', `${getInternalApiUrl()}/api/admin/auth/get-session`);
+  const url = `${getInternalApiUrl()}/api/admin/auth/session`;
+  console.log('[proxy] getUserSession - URL:', url);
   try {
-    const response = await fetch(`${getInternalApiUrl()}/api/admin/auth/get-session`, {
+    const response = await fetch(url, {
       headers: {
         cookie: cookies || '',
       },
