@@ -1,5 +1,0 @@
-{
-  "extends": "@repo/tsconfig/internal-package.json",
-  "exclude": ["node_modules"],
-  "include": ["**/*"]
-}
