@@ -5,16 +5,16 @@ import { client } from '@/lib/hono';
 import { ApiError } from '@repo/shared';
 import { useTranslations } from 'next-intl';
 
-type ResponseType = InferResponseType<(typeof client.api.alpha)['agency-managers'][':identifier']['$delete']>;
-type RequestType = InferRequestType<(typeof client.api.alpha)['agency-managers'][':identifier']['$delete']>;
+type ResponseType = InferResponseType<(typeof client.api.admin)['agency-managers'][':identifier']['$delete']>;
+type RequestType = InferRequestType<(typeof client.api.admin)['agency-managers'][':identifier']['$delete']>;
 
 export const useDeleteAgencyManager = (options?: { onSuccess?: () => void; onError?: () => void }) => {
-  const t = useTranslations('agencyOwner');
+  const t = useTranslations();
   const queryClient = useQueryClient();
 
   return useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (param) => {
-      const response = await client.api.alpha['agency-managers'][':identifier'].$delete({
+      const response = await client.api.admin['agency-managers'][':identifier'].$delete({
         param,
       });
       if (!response.ok) {
@@ -23,7 +23,7 @@ export const useDeleteAgencyManager = (options?: { onSuccess?: () => void; onErr
       return await response.json();
     },
     onSuccess: () => {
-      toast.success(t('success.deleted'));
+      toast.success(t('agencyManager.success.deleted'));
       queryClient.invalidateQueries({ queryKey: ['agency-managers'] });
       options?.onSuccess?.();
     },

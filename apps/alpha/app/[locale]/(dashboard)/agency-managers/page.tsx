@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { AgencyManagers } from '@/app/[locale]/_components/agency-managers';
 
 export const metadata: Metadata = {
-  description: 'Agency management page',
-  title: 'Agencies',
+  description: 'Agency managers management page',
+  title: 'Agency Managers',
 };
 
 const Page = () => <AgencyManagers />;

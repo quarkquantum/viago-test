@@ -129,15 +129,6 @@ export const AgencyDetails = () => {
     );
   }
 
-  const stats = {
-    revenue: agency.stats?.revenue ?? 0,
-    trips: agency.stats?.trips ?? 0,
-    drivers: agency.stats?.drivers ?? 0,
-    buses: agency.stats?.buses ?? 0,
-    cashiers: agency.stats?.cashiers ?? 0,
-    bookings: agency.stats?.bookings ?? 0,
-  };
-
   return (
     <div className="flex h-full min-h-[calc(100vh-64px)] w-full flex-col gap-6">
       {/* Header */}
@@ -155,8 +146,8 @@ export const AgencyDetails = () => {
             </div>
             <p className="text-primary">{agency.description || t('details.noDescription')}</p>
           </div>
-          <Badge variant={agency.status === AgencyStatus.ACTIVE ? 'default' : agency.status === AgencyStatus.SUSPENDED ? 'destructive' : 'secondary'}>
-            {agency.status === AgencyStatus.ACTIVE ? commonT('status.active') : agency.status === AgencyStatus.SUSPENDED ? commonT('status.suspended') : commonT('status.inactive')}
+          <Badge variant={agency.status === AgencyStatus.ACTIVE ? 'default' : 'secondary'}>
+            {agency.status === AgencyStatus.ACTIVE ? commonT('status.active') : commonT('status.inactive')}
           </Badge>
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
@@ -210,31 +201,31 @@ export const AgencyDetails = () => {
           description={t('details.stats.revenueDescription')}
           icon={DollarSign}
           title={t('details.stats.revenue')}
-          value={formatCurrency(stats.revenue)}
+          value={formatCurrency(agency.stats.revenue)}
         />
         <StatCard
           description={t('details.stats.tripsDescription')}
           icon={MapPin}
           title={t('details.stats.trips')}
-          value={stats.trips.toLocaleString()}
+          value={agency.stats.trips.toLocaleString()}
         />
         <StatCard
           description={t('details.stats.driversDescription')}
           icon={Users}
           title={t('details.stats.drivers')}
-          value={stats.drivers.toLocaleString()}
+          value={agency.stats.drivers.toLocaleString()}
         />
         <StatCard
           description={t('details.stats.busesDescription')}
           icon={Bus}
           title={t('details.stats.buses')}
-          value={stats.buses.toLocaleString()}
+          value={agency.stats.buses.toLocaleString()}
         />
         <StatCard
           description={t('details.stats.cashiersDescription')}
           icon={Wallet}
           title={t('details.stats.cashiers')}
-          value={stats.cashiers.toLocaleString()}
+          value={agency.stats.cashiers.toLocaleString()}
         />
       </div>
 
@@ -334,7 +325,7 @@ export const AgencyDetails = () => {
               <MapPin className="mt-0.5 size-5 text-muted-foreground" />
               <div className="min-w-0 flex-1">
                 <p className="mb-1 text-muted-foreground text-xs">{t('details.bookings')}</p>
-                 <p className="font-medium">{stats.bookings.toLocaleString()}</p>
+                <p className="font-medium">{agency.stats.bookings?.toLocaleString() || '0'}</p>
               </div>
             </div>
 
@@ -342,11 +333,11 @@ export const AgencyDetails = () => {
               <DollarSign className="mt-0.5 size-5 text-muted-foreground" />
               <div className="min-w-0 flex-1">
                 <p className="mb-1 text-muted-foreground text-xs">{t('details.avgRevenuePerTrip')}</p>
-                 <p className="font-medium">
-                   {stats.trips > 0
-                     ? formatCurrency(stats.revenue / stats.trips)
-                     : formatCurrency(0)}
-                 </p>
+                <p className="font-medium">
+                  {agency.stats.trips > 0
+                    ? formatCurrency(agency.stats.revenue / agency.stats.trips)
+                    : formatCurrency(0)}
+                </p>
               </div>
             </div>
 
@@ -354,11 +345,11 @@ export const AgencyDetails = () => {
               <Bus className="mt-0.5 size-5 text-muted-foreground" />
               <div className="min-w-0 flex-1">
                 <p className="mb-1 text-muted-foreground text-xs">{t('details.fleetUtilization')}</p>
-                 <p className="font-medium">
-                   {stats.buses > 0
-                     ? `${((stats.trips / stats.buses) * 100).toFixed(1)}% ${t('details.active')}`
-                     : 'N/A'}
-                 </p>
+                <p className="font-medium">
+                  {agency.stats.buses > 0
+                    ? `${((agency.stats.trips / agency.stats.buses) * 100).toFixed(1)}% ${t('details.active')}`
+                    : 'N/A'}
+                </p>
               </div>
             </div>
           </CardContent>
@@ -378,9 +369,9 @@ export const AgencyDetails = () => {
               <Users className="mt-0.5 size-5 text-muted-foreground" />
               <div className="min-w-0 flex-1">
                 <p className="mb-1 text-muted-foreground text-xs">{t('details.totalStaff')}</p>
-                 <p className="font-medium">
-                   {(stats.drivers + stats.cashiers).toLocaleString()} {t('details.members')}
-                 </p>
+                <p className="font-medium">
+                  {(agency.stats.drivers + agency.stats.cashiers).toLocaleString()} {t('details.members')}
+                </p>
               </div>
             </div>
 
@@ -388,11 +379,11 @@ export const AgencyDetails = () => {
               <Bus className="mt-0.5 size-5 text-muted-foreground" />
               <div className="min-w-0 flex-1">
                 <p className="mb-1 text-muted-foreground text-xs">{t('details.driverToBusRatio')}</p>
-                 <p className="font-medium">
-                   {stats.buses > 0
-                     ? `${(stats.drivers / stats.buses).toFixed(1)} ${t('details.driversPerBus')}`
-                     : 'N/A'}
-                 </p>
+                <p className="font-medium">
+                  {agency.stats.buses > 0
+                    ? `${(agency.stats.drivers / agency.stats.buses).toFixed(1)} ${t('details.driversPerBus')}`
+                    : 'N/A'}
+                </p>
               </div>
             </div>
 
@@ -400,11 +391,11 @@ export const AgencyDetails = () => {
               <Wallet className="mt-0.5 size-5 text-muted-foreground" />
               <div className="min-w-0 flex-1">
                 <p className="mb-1 text-muted-foreground text-xs">{t('details.revenuePerStaff')}</p>
-                 <p className="font-medium">
-                   {stats.drivers + stats.cashiers > 0
-                     ? formatCurrency(stats.revenue / (stats.drivers + stats.cashiers))
-                     : formatCurrency(0)}
-                 </p>
+                <p className="font-medium">
+                  {agency.stats.drivers + agency.stats.cashiers > 0
+                    ? formatCurrency(agency.stats.revenue / (agency.stats.drivers + agency.stats.cashiers))
+                    : formatCurrency(0)}
+                </p>
               </div>
             </div>
           </CardContent>

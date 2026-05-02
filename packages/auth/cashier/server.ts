@@ -117,40 +117,6 @@ export const auth = betterAuth({
         },
       },
     },
-    session: {
-      create: {
-        before: async (session) => {
-          // Check if cashier's agency is active
-          const userWithAgency = await prisma.user.findUnique({
-            select: {
-              agencyMemberships: {
-                include: {
-                  agency: {
-                    select: { status: true, name: true },
-                  },
-                },
-                where: {
-                  role: {
-                    name: SystemRoles.CASHIER,
-                  },
-                },
-              },
-            },
-            where: { id: session.userId },
-          });
-
-          const agency = userWithAgency?.agencyMemberships[0]?.agency;
-
-          if (!agency) {
-            throw new Error('Cashier is not associated with any agency');
-          }
-
-          if (agency.status !== 'ACTIVE') {
-            throw new Error(`Agency "${agency.name}" is ${agency.status.toLowerCase()}. Access denied.`);
-          }
-        },
-      },
-    },
   },
   emailAndPassword: {
     enabled: true,

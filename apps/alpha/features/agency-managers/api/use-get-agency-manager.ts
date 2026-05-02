@@ -3,13 +3,13 @@ import { useQuery } from '@tanstack/react-query';
 import { client } from '@/lib/hono';
 import { ApiError } from '@repo/shared';
 
-type ResponseType = InferResponseType<(typeof client.api.alpha)['agency-managers'][':identifier']['$get']>;
-type RequestType = InferRequestType<(typeof client.api.alpha)['agency-managers'][':identifier']['$get']>;
+type ResponseType = InferResponseType<(typeof client.api.admin)['agency-managers'][':identifier']['$get']>;
+type RequestType = InferRequestType<(typeof client.api.admin)['agency-managers'][':identifier']['$get']>;
 
 export const useGetAgencyManager = (identifier: string) =>
   useQuery<ResponseType, Error>({
     queryFn: async () => {
-      const response = await client.api.alpha['agency-managers'][':identifier'].$get({
+      const response = await client.api.admin['agency-managers'][':identifier'].$get({
         param: { identifier },
       });
       if (!response.ok) {

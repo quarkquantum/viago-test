@@ -55,10 +55,10 @@ const agencyHandler = new Hono<HonoEnv>()
       include: {
         _count: {
           select: {
+            cashiers: true,
             buses: true,
+            drivers: true,
             trips: true,
-            members: true,
-            locations: true,
           },
         },
       },

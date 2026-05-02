@@ -9,13 +9,7 @@ import { admin, createAuthMiddleware, customSession, emailOTP, openAPI, twoFacto
 import { createAccessControl } from 'better-auth/plugins/access';
 import { adminAc, defaultStatements } from 'better-auth/plugins/admin/access';
 import { TRUSTED_ORIGINS } from '../constants';
-
-// Runtime environment reader (not baked at build time)
-const getEnv = (key: string) => process.env[key];
-const getNodeEnv = () => getEnv('NODE_ENV') || 'development';
-const getCookieDomain = () => getEnv('NEXT_PUBLIC_COOKIE_DOMAIN') || '.velora-viago.com';
-const getApiUrl = () => getEnv('NEXT_PUBLIC_API_URL') || 'http://localhost:3000';
-const getBetterAuthSecret = () => getEnv('BETTER_AUTH_SECRET') || '';
+import { keys } from '../keys';
 
 // Create access control with admin permissions
 const statement = {
@@ -45,27 +39,27 @@ export const auth = betterAuth({
     crossSubDomainCookies: {
       // In production, use the main domain for cross-subdomain cookies
       // In development, use localhost
-      domain: getNodeEnv() === 'production' 
-        ? getCookieDomain()
-        : getEnv('NEXT_PUBLIC_COOKIE_DOMAIN'),
+      domain: keys().NODE_ENV === 'production' 
+        ? keys().NEXT_PUBLIC_COOKIE_DOMAIN || '.velora-viago.com' 
+        : keys().NEXT_PUBLIC_COOKIE_DOMAIN,
       enabled: true,
     },
     database: {
       generateId: false,
     },
     defaultCookieAttributes: {
-      sameSite: getNodeEnv() === 'production' ? 'none' : 'lax',
+      sameSite: keys().NODE_ENV === 'production' ? 'none' : 'lax',
       // Ensure cookies are accessible across subdomains in production
-      ...(getNodeEnv() === 'production' && { 
+      ...(keys().NODE_ENV === 'production' && { 
         secure: true,
-        domain: getCookieDomain(),
+        domain: keys().NEXT_PUBLIC_COOKIE_DOMAIN || '.velora-viago.com',
       }),
     },
-    useSecureCookies: getNodeEnv() === 'production',
+    useSecureCookies: keys().NODE_ENV === 'production',
   },
   basePath: '/api/admin/auth',
-  baseURL: getApiUrl(),
-  secret: getBetterAuthSecret(),
+  baseURL: keys().NEXT_PUBLIC_API_URL,
+  secret: keys().BETTER_AUTH_SECRET,
   trustedOrigins: TRUSTED_ORIGINS,
   user: {
     fields: {

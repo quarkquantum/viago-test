@@ -21,7 +21,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     admins: (await import(`../messages/${locale}/admins.json`)).default,
     drivers: (await import(`../messages/${locale}/drivers.json`)).default,
     stats: (await import(`../messages/${locale}/stats.json`)).default,
-    agencyOwner: (await import(`../messages/${locale}/agency-managers.json`)).default.agencyOwner,
+    agencyManager: (await import(`../messages/${locale}/agency-managers.json`)).default.agencyManager,
   };
 
   return {

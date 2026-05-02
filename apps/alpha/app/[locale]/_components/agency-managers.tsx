@@ -38,7 +38,7 @@ const statusClasses: Record<string, string> = {
 };
 
 const StatusBadge = ({ status }: { status: string | null }) => {
-  const t = useTranslations('agencyOwner');
+  const t = useTranslations('agencyManager');
   const currentStatus = status ?? 'DEFAULT';
   const label = currentStatus === AgencyManagerStatus.ACTIVE ? t('statusActive') : t('statusInactive');
 
@@ -50,14 +50,14 @@ const StatusBadge = ({ status }: { status: string | null }) => {
 };
 
 export const AgencyManagers = () => {
-  const t = useTranslations('agencyOwner');
+  const t = useTranslations();
   const headers = [
-    t('table.name'),
-    t('table.phone'),
-    t('table.email'),
-    t('table.agency'),
-    t('table.status'),
-    t('table.action'),
+    t('agencyManager.table.name'),
+    t('agencyManager.table.phone'),
+    t('agencyManager.table.email'),
+    t('agencyManager.table.agency'),
+    t('agencyManager.table.status'),
+    t('agencyManager.table.action'),
   ];
 
   const [page, setPage] = useQueryState('page', parseAsInteger.withDefault(1));
@@ -84,18 +84,18 @@ export const AgencyManagers = () => {
 
   const filterList = [
     {
-      label: t('filter.status'),
+      label: t('agencyManager.filter.status'),
       options: [
         {
-          label: t('filter.all'),
+          label: t('agencyManager.filter.all'),
           value: undefined,
         },
         {
-          label: t('filter.active'),
+          label: t('agencyManager.filter.active'),
           value: AgencyManagerStatus.ACTIVE,
         },
         {
-          label: t('filter.inactive'),
+          label: t('agencyManager.filter.inactive'),
           value: AgencyManagerStatus.INACTIVE,
         },
       ],
@@ -116,10 +116,10 @@ export const AgencyManagers = () => {
     <div className="flex min-h-full w-full flex-col gap-6">
       <div className="flex flex-col gap-2 py-2">
         <div className="flex items-end justify-between">
-          <h1 className="font-bold text-2xl">{t('listTitle')}</h1>
+          <h1 className="font-bold text-2xl">{t('agencyManager.listTitle')}</h1>
           <NewAgencyManager />
         </div>
-          <p className="text-primary">{t('listDescription')}</p>
+        <p className="text-primary">{t('agencyManager.listDescription')}</p>
       </div>
 
       <SearchInput
@@ -129,7 +129,7 @@ export const AgencyManagers = () => {
           setPage(1);
           refetch();
         }}
-        placeholder={t('searchPlaceholder')}
+        placeholder={t('agencyManager.searchPlaceholder')}
         setFilterAction={(newFilter: any) => {
           if ('status' in newFilter) {
             setStatus((newFilter.status as AgencyManagerStatus) || null);
@@ -190,8 +190,8 @@ export const AgencyManagers = () => {
             <EmptyMedia variant="icon">
               <User2 />
             </EmptyMedia>
-            <EmptyTitle>{t('noAgencyOwners')}</EmptyTitle>
-            <EmptyDescription>{t('noAgencyOwnersDescription')}</EmptyDescription>
+            <EmptyTitle>{t('agencyManager.noAgencyManagers')}</EmptyTitle>
+            <EmptyDescription>{t('agencyManager.noAgencyManagersDescription')}</EmptyDescription>
           </EmptyHeader>
         </Empty>
       )}

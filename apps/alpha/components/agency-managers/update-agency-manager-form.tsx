@@ -22,8 +22,7 @@ type UpdateAgencyManagerFormProps = {
 
 export function UpdateAgencyManagerForm({ id, agencyManager, agencies, setOpen }: UpdateAgencyManagerFormProps) {
   const updateAgencyManager = useUpdateAgencyManager(id);
-  const t = useTranslations('agencyOwner');
-  const tc = useTranslations('common');
+  const t = useTranslations();
 
   const formSchema = z.object({
     firstName: z.string().optional(),
@@ -57,8 +56,8 @@ export function UpdateAgencyManagerForm({ id, agencyManager, agencies, setOpen }
   };
 
   const statusOptions = [
-    { value: AgencyManagerStatus.ACTIVE, label: t('statusActive') },
-    { value: AgencyManagerStatus.INACTIVE, label: t('statusInactive') },
+    { value: AgencyManagerStatus.ACTIVE, label: t('agencyManager.statusActive') },
+    { value: AgencyManagerStatus.INACTIVE, label: t('agencyManager.statusInactive') },
   ];
 
   return (
@@ -69,12 +68,12 @@ export function UpdateAgencyManagerForm({ id, agencyManager, agencies, setOpen }
           name="firstName"
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel>{t('firstName')}</FieldLabel>
+              <FieldLabel>{t('agencyManager.firstName')}</FieldLabel>
               <Input
                 {...field}
                 aria-invalid={fieldState.invalid}
                 autoComplete="off"
-                placeholder={t('firstName')}
+                placeholder={t('agencyManager.firstName')}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
@@ -85,12 +84,12 @@ export function UpdateAgencyManagerForm({ id, agencyManager, agencies, setOpen }
           name="lastName"
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel>{t('lastName')}</FieldLabel>
+              <FieldLabel>{t('agencyManager.lastName')}</FieldLabel>
               <Input
                 {...field}
                 aria-invalid={fieldState.invalid}
                 autoComplete="off"
-                placeholder={t('lastName')}
+                placeholder={t('agencyManager.lastName')}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
@@ -101,12 +100,12 @@ export function UpdateAgencyManagerForm({ id, agencyManager, agencies, setOpen }
           name="phoneNumber"
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel>{t('phoneNumber')}</FieldLabel>
+              <FieldLabel>{t('agencyManager.phoneNumber')}</FieldLabel>
               <Input
                 {...field}
                 aria-invalid={fieldState.invalid}
                 autoComplete="off"
-                placeholder={t('phoneNumber')}
+                placeholder={t('agencyManager.phoneNumber')}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
@@ -117,12 +116,12 @@ export function UpdateAgencyManagerForm({ id, agencyManager, agencies, setOpen }
           name="agencyId"
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel>{t('agency')}</FieldLabel>
+              <FieldLabel>{t('agencyManager.agency')}</FieldLabel>
               <Select
                 {...field}
                 onValueChange={field.onChange}
                 options={agencies}
-                placeholder={t('selectAgency')}
+                placeholder={t('agencyManager.selectAgency')}
                 value={field.value}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -134,12 +133,12 @@ export function UpdateAgencyManagerForm({ id, agencyManager, agencies, setOpen }
           name="status"
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel>{t('status')}</FieldLabel>
+              <FieldLabel>{t('agencyManager.status')}</FieldLabel>
               <Select
                 {...field}
                 onValueChange={field.onChange}
                 options={statusOptions}
-                placeholder={t('selectStatus')}
+                placeholder={t('agencyManager.selectStatus')}
                 value={field.value}
                 withSearch={false}
               />
@@ -150,10 +149,10 @@ export function UpdateAgencyManagerForm({ id, agencyManager, agencies, setOpen }
       </FieldGroup>
       <DialogFooter className="mt-6">
         <DialogClose asChild>
-          <Button variant="outline">{tc('cancel')}</Button>
+          <Button variant="outline">{t('common.cancel')}</Button>
         </DialogClose>
         <Button disabled={updateAgencyManager.isPending} type="submit">
-          {updateAgencyManager.isPending ? t('updating') : t('update')}
+          {updateAgencyManager.isPending ? t('agencyManager.updating') : t('agencyManager.update')}
         </Button>
       </DialogFooter>
     </form>

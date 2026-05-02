@@ -5,7 +5,6 @@ import { prisma } from '@repo/database';
 import { AgencyMemberStatus, SystemRoles } from '@repo/shared';
 import { createMiddleware } from 'hono/factory';
 import { AppError } from '@/errors/index';
-import { checkAgencyStatus } from './check-agency-status';
 import type { HonoEnv } from '@/lib/hono/context';
 import type { UserSessionModel } from '@/types';
 
@@ -91,8 +90,6 @@ export const isAgency = createMiddleware<HonoEnv>(async (ctx, next) => {
       message: `Access denied. Your role is "${hasAnyMembership.role.name}" but you need the "OWNER" role to access this resource.`,
     });
   }
-
-  checkAgencyStatus(membership.agency);
 
   ctx.set('user', session.user);
   ctx.set('session', session.session);

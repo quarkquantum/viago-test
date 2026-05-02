@@ -5,7 +5,6 @@ import { prisma } from '@repo/database';
 import { SystemRoles } from '@repo/shared';
 import { createMiddleware } from 'hono/factory';
 import { AppError } from '@/errors/index';
-import { checkAgencyStatus } from './check-agency-status';
 import type { HonoEnv } from '@/lib/hono/context';
 import type { UserSessionModel } from '@/types';
 
@@ -57,7 +56,7 @@ export const isCashier = createMiddleware<HonoEnv>(async (ctx, next) => {
     },
     include: {
       agency: {
-        select: { id: true, name: true, slug: true, status: true },
+        select: { id: true, name: true, slug: true },
       },
     },
   });
@@ -69,8 +68,6 @@ export const isCashier = createMiddleware<HonoEnv>(async (ctx, next) => {
       message: 'User is not a cashier for any agency',
     });
   }
-
-  checkAgencyStatus(membership.agency);
 
   ctx.set('user', session.user);
   ctx.set('session', session.session);

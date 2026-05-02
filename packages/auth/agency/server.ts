@@ -84,36 +84,6 @@ export const auth = betterAuth({
         },
       },
     },
-    session: {
-      create: {
-        before: async (session) => {
-          // Check if user's agency is active
-          const userWithAgency = await prisma.user.findUnique({
-            select: {
-              agencyMemberships: {
-                include: {
-                  agency: {
-                    select: { status: true, name: true },
-                  },
-                },
-                where: {
-                  role: {
-                    name: SystemRoles.OWNER,
-                  },
-                },
-              },
-            },
-            where: { id: session.userId },
-          });
-
-          const agency = userWithAgency?.agencyMemberships[0]?.agency;
-
-          if (agency && agency.status !== AgencyStatus.ACTIVE) {
-            throw new Error(`Agency "${agency.name}" is ${agency.status.toLowerCase()}. Access denied.`);
-          }
-        },
-      },
-    },
   },
   emailAndPassword: {
     enabled: true,

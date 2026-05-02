@@ -23,15 +23,14 @@ import { useListAgencies } from '@/features/agencies/api/use-list-agencies';
 import { Select } from '@/components/select';
 
 export function NewAgencyManager() {
-  const t = useTranslations('agencyOwner');
-  const tc = useTranslations('common');
+  const t = useTranslations();
   const { data: agenciesData } = useListAgencies({ limit: '100' });
   const formSchema = z.object({
-    agencyId: z.string().min(1, { message: t('agencyRequired') }),
-    email: z.string().email({ message: t('invalidEmail') }),
-    firstName: z.string().min(1, { message: t('firstNameRequired') }),
-    lastName: z.string().min(1, { message: t('lastNameRequired') }),
-    phoneNumber: z.string().min(1, { message: t('phoneNumberRequired') }),
+    agencyId: z.string().min(1, { message: t('agencyManager.agencyRequired') }),
+    email: z.string().email({ message: t('agencyManager.invalidEmail') }),
+    firstName: z.string().min(1, { message: t('agencyManager.firstNameRequired') }),
+    lastName: z.string().min(1, { message: t('agencyManager.lastNameRequired') }),
+    phoneNumber: z.string().min(1, { message: t('agencyManager.phoneNumberRequired') }),
   });
 
   const createAgencyManager = useCreateAgencyManager();
@@ -65,13 +64,13 @@ export function NewAgencyManager() {
     <Dialog onOpenChange={setOpen} open={open}>
       <DialogTrigger asChild>
         <Button>
-          <UserPlus /> {t('addNew')}
+          <UserPlus /> {t('agencyManager.addNew')}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-106.25">
         <DialogHeader>
-          <DialogTitle>{t('addNew')}</DialogTitle>
-          <DialogDescription>{t('addDescription')}</DialogDescription>
+          <DialogTitle>{t('agencyManager.addNew')}</DialogTitle>
+          <DialogDescription>{t('agencyManager.addDescription')}</DialogDescription>
         </DialogHeader>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FieldGroup>
@@ -80,12 +79,12 @@ export function NewAgencyManager() {
               name="agencyId"
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel>{t('agency')}</FieldLabel>
+                  <FieldLabel>{t('agencyManager.agency')}</FieldLabel>
                   <Select
                     {...field}
                     onValueChange={field.onChange}
                     options={agencies}
-                    placeholder={t('selectAgency')}
+                    placeholder={t('agencyManager.selectAgency')}
                     value={field.value}
                   />
                   {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -97,12 +96,12 @@ export function NewAgencyManager() {
               name="firstName"
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel>{t('firstName')}</FieldLabel>
+                  <FieldLabel>{t('agencyManager.firstName')}</FieldLabel>
                   <Input
                     {...field}
                     aria-invalid={fieldState.invalid}
                     autoComplete="off"
-                    placeholder={t('firstName')}
+                    placeholder={t('agencyManager.firstName')}
                   />
                   {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                 </Field>
@@ -113,12 +112,12 @@ export function NewAgencyManager() {
               name="lastName"
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel>{t('lastName')}</FieldLabel>
+                  <FieldLabel>{t('agencyManager.lastName')}</FieldLabel>
                   <Input
                     {...field}
                     aria-invalid={fieldState.invalid}
                     autoComplete="off"
-                    placeholder={t('lastName')}
+                    placeholder={t('agencyManager.lastName')}
                   />
                   {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                 </Field>
@@ -129,12 +128,12 @@ export function NewAgencyManager() {
               name="email"
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel>{t('email')}</FieldLabel>
+                  <FieldLabel>{t('agencyManager.email')}</FieldLabel>
                   <Input
                     {...field}
                     aria-invalid={fieldState.invalid}
                     autoComplete="off"
-                    placeholder={t('emailAddress')}
+                    placeholder={t('agencyManager.emailAddress')}
                     type="email"
                   />
                   {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -146,12 +145,12 @@ export function NewAgencyManager() {
               name="phoneNumber"
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel>{t('phoneNumber')}</FieldLabel>
+                  <FieldLabel>{t('agencyManager.phoneNumber')}</FieldLabel>
                   <Input
                     {...field}
                     aria-invalid={fieldState.invalid}
                     autoComplete="off"
-                    placeholder={t('phoneNumber')}
+                    placeholder={t('agencyManager.phoneNumber')}
                   />
                   {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                 </Field>
@@ -160,14 +159,14 @@ export function NewAgencyManager() {
           </FieldGroup>
           <DialogFooter className="mt-6">
             <DialogClose asChild>
-              <Button variant="outline">{tc('cancel')}</Button>
+              <Button variant="outline">{t('common.cancel')}</Button>
             </DialogClose>
             <Button
               disabled={!form.formState.isValid || createAgencyManager.isPending}
               onClick={form.handleSubmit(onSubmit)}
               type="submit"
             >
-              {createAgencyManager.isPending ? t('creating') : t('create')}
+              {createAgencyManager.isPending ? t('agencyManager.creating') : t('agencyManager.create')}
             </Button>
           </DialogFooter>
         </form>

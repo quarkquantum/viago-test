@@ -9,7 +9,7 @@ const LOCALE_PATTERN = /^\/(en|fr)(\/|$)/;
 
 async function getUserSession(request: NextRequest) {
   try {
-    const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/api/cashier/auth/get-session`, {
+    const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/api/cashier/auth/session`, {
       headers: {
         cookie: request.headers.get('cookie') || '',
       },

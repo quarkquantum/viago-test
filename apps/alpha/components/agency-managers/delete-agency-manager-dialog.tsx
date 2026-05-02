@@ -18,8 +18,7 @@ import { useState } from 'react';
 import { useDeleteAgencyManager } from '@/features/agency-managers/api/use-delete-agency-manager';
 
 export function DeleteAgencyManagerDialog({ managerId }: { managerId: string }) {
-  const t = useTranslations('agencyOwner');
-  const tCommon = useTranslations();
+  const t = useTranslations();
   const [open, setOpen] = useState(false);
   const deleteAgencyManager = useDeleteAgencyManager();
 
@@ -39,23 +38,23 @@ export function DeleteAgencyManagerDialog({ managerId }: { managerId: string }) 
       <AlertDialogTrigger asChild>
         <Button size="sm" variant="destructive">
           <Trash2 className="mr-2 h-4 w-4" />
-          {tCommon('common.delete')}
+          {t('common.delete')}
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>{tCommon('common.dialogs.confirmTitle')}</AlertDialogTitle>
-          <AlertDialogDescription>{t('deleteDescription')}</AlertDialogDescription>
+          <AlertDialogTitle>{t('common.dialogs.confirmTitle')}</AlertDialogTitle>
+          <AlertDialogDescription>{t('agencyManager.deleteDescription')}</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>{tCommon('common.cancel')}</AlertDialogCancel>
+          <AlertDialogCancel>{t('common.cancel')}</AlertDialogCancel>
           <HoldButton
             disabled={deleteAgencyManager.isPending}
             holdDuration={2000}
             onHoldComplete={handleDelete}
             variant="destructive"
           >
-            {deleteAgencyManager.isPending ? t('deleting') : t('holdToDelete')}
+            {deleteAgencyManager.isPending ? t('agencyManager.deleting') : t('agencyManager.holdToDelete')}
           </HoldButton>
         </AlertDialogFooter>
       </AlertDialogContent>

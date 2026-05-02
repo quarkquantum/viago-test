@@ -1,11 +1,11 @@
 {
-  "agencyOwner": {
-    "title": "Agency Owners",
-    "addNew": "Add",
-    "addDescription": "Fill the form to create a new agency owner account. Click save when you're done.",
+  "agencyManager": {
+    "title": "Agency Managers",
+    "addNew": "Add New Agency Manager",
+    "addDescription": "Fill the form to create a new agency manager account. Click save when you're done.",
     "edit": "Edit",
-    "editTitle": "Edit Agency Owner",
-    "editDescription": "Modify the agency owner details. Click save when you're done.",
+    "editTitle": "Edit Agency Manager",
+    "editDescription": "Modify the agency manager details. Click save when you're done.",
     "deleting": "Deleting...",
     "holdToDelete": "Hold to delete",
     "firstName": "First Name",
@@ -13,8 +13,8 @@
     "email": "Email",
     "emailAddress": "Email Address",
     "phoneNumber": "Phone Number",
-    "agency": "Transport Company",
-    "selectAgency": "Select company...",
+    "agency": "Agency",
+    "selectAgency": "Select agency...",
     "status": "Status",
     "selectStatus": "Select status...",
     "statusActive": "Active",
@@ -23,21 +23,21 @@
     "firstNameRequired": "First name is required.",
     "lastNameRequired": "Last name is required.",
     "phoneNumberRequired": "Phone number is required.",
-    "agencyRequired": "Transport company is required.",
+    "agencyRequired": "Agency is required.",
     "creating": "Creating...",
     "updating": "Updating...",
     "create": "Create",
     "update": "Update",
-    "listTitle": "Agency Owners",
-    "listDescription": "View and manage agency owners",
-    "searchPlaceholder": "Search agency owners...",
-    "noAgencyOwners": "No agency owners found",
-    "noAgencyOwnersDescription": "There are no agency owners at the moment.",
+    "listTitle": "Agency Managers",
+    "listDescription": "View and manage agency managers",
+    "searchPlaceholder": "Search agency managers...",
+    "noAgencyManagers": "No agency managers found",
+    "noAgencyManagersDescription": "There are no agency managers at the moment.",
     "table": {
       "name": "Name",
       "phone": "Phone",
       "email": "Email",
-      "agency": "Transport Company",
+      "agency": "Agency",
       "status": "Status",
       "action": "Action"
     },
@@ -47,11 +47,11 @@
       "active": "Active",
       "inactive": "Inactive"
     },
-    "deleteDescription": "Are you sure you want to delete this agency owner? This action cannot be undone.",
+    "deleteDescription": "Are you sure you want to delete this agency manager? This action cannot be undone.",
     "success": {
-      "created": "Agency owner created successfully",
-      "updated": "Agency owner updated successfully",
-      "deleted": "Agency owner deleted successfully"
+      "created": "Agency manager created successfully",
+      "updated": "Agency manager updated successfully",
+      "deleted": "Agency manager deleted successfully"
     }
   }
 }

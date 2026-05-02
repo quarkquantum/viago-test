@@ -1,11 +1,11 @@
 {
-  "agencyOwner": {
-    "title": "Propriétaires d'agence",
-    "addNew": "Ajouter",
-    "addDescription": "Remplissez le formulaire pour créer un nouveau compte de propriétaire d'agence. Cliquez sur enregistrer lorsque vous avez terminé.",
+  "agencyManager": {
+    "title": "Gestionnaires d'Agence",
+    "addNew": "Ajouter un gestionnaire",
+    "addDescription": "Remplissez le formulaire pour créer un nouveau compte gestionnaire d'agence. Cliquez sur enregistrer lorsque vous avez terminé.",
     "edit": "Modifier",
-    "editTitle": "Modifier le propriétaire d'agence",
-    "editDescription": "Modifiez les détails du propriétaire d'agence. Cliquez sur enregistrer lorsque vous avez terminé.",
+    "editTitle": "Modifier le gestionnaire",
+    "editDescription": "Modifiez les détails du gestionnaire d'agence. Cliquez sur enregistrer lorsque vous avez terminé.",
     "deleting": "Suppression...",
     "holdToDelete": "Maintenir pour supprimer",
     "firstName": "Prénom",
@@ -13,8 +13,8 @@
     "email": "E-mail",
     "emailAddress": "Adresse e-mail",
     "phoneNumber": "Numéro de téléphone",
-    "agency": "Compagnie de transport",
-    "selectAgency": "Sélectionner une compagnie...",
+    "agency": "Agence",
+    "selectAgency": "Sélectionner une agencia...",
     "status": "Statut",
     "selectStatus": "Sélectionner le statut...",
     "statusActive": "Actif",
@@ -23,21 +23,21 @@
     "firstNameRequired": "Le prénom est requis.",
     "lastNameRequired": "Le nom est requis.",
     "phoneNumberRequired": "Le numéro de téléphone est requis.",
-    "agencyRequired": "La compagnie de transport est requise.",
+    "agencyRequired": "L'agence est requise.",
     "creating": "Création...",
     "updating": "Mise à jour...",
     "create": "Créer",
     "update": "Mettre à jour",
-    "listTitle": "Propriétaires d'agence",
-    "listDescription": "Gérer les propriétaires d'agence",
-    "searchPlaceholder": "Rechercher des propriétaires d'agence...",
-    "noAgencyOwners": "Aucun propriétaire d'agence trouvé",
-    "noAgencyOwnersDescription": "Il n'y a aucun propriétaire d'agence pour le moment.",
+    "listTitle": "Gestionnaires d'Agence",
+    "listDescription": "Gérer les Admin Transporteurs",
+    "searchPlaceholder": "Rechercher des gestionnaires...",
+    "noAgencyManagers": "Aucun gestionnaire trouvé",
+    "noAgencyManagersDescription": "Il n'y a aucun gestionnaire d'agence pour le moment.",
     "table": {
       "name": "Nom",
       "phone": "Téléphone",
       "email": "E-mail",
-      "agency": "Compagnie de transport",
+      "agency": "Agence",
       "status": "Statut",
       "action": "Action"
     },
@@ -47,11 +47,11 @@
       "active": "Actif",
       "inactive": "Inactif"
     },
-    "deleteDescription": "Êtes-vous sûr de vouloir supprimer ce propriétaire d'agence ? Cette action est irréversible.",
+    "deleteDescription": "Êtes-vous sûr de vouloir supprimer ce gestionnaire d'agence ? Cette action est irréversible.",
     "success": {
-      "created": "Propriétaire d'agence créé avec succès",
-      "updated": "Propriétaire d'agence mis à jour avec succès",
-      "deleted": "Propriétaire d'agence supprimé avec succès"
+      "created": "Gestionnaire d'agence créé avec succès",
+      "updated": "Gestionnaire d'agence mis à jour avec succès",
+      "deleted": "Gestionnaire d agency'supprimé avec succès"
     }
   }
 }

@@ -22,7 +22,7 @@ type UpdateAgencyManagerProps = {
 };
 
 export function UpdateAgencyManager({ id }: UpdateAgencyManagerProps) {
-  const t = useTranslations('agencyOwner');
+  const t = useTranslations();
   const [open, setOpen] = useState(false);
   const { data: manager, isLoading } = useGetAgencyManager(id);
   const { data: agenciesData } = useListAgencies({ limit: '100' });
@@ -35,7 +35,7 @@ export function UpdateAgencyManager({ id }: UpdateAgencyManagerProps) {
   if (isLoading || !manager || 'message' in manager) {
     return (
       <Button disabled variant="outline">
-        <Pen className="mr-2 h-4 w-4" /> {t('edit')}
+        <Pen className="mr-2 h-4 w-4" /> {t('agencyManager.edit')}
       </Button>
     );
   }
@@ -44,13 +44,13 @@ export function UpdateAgencyManager({ id }: UpdateAgencyManagerProps) {
     <Dialog onOpenChange={setOpen} open={open}>
       <DialogTrigger asChild>
         <Button>
-          <Pen className="mr-2 h-4 w-4" /> {t('edit')}
+          <Pen className="mr-2 h-4 w-4" /> {t('agencyManager.edit')}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-106.25">
         <DialogHeader>
-          <DialogTitle>{t('editTitle')}</DialogTitle>
-          <DialogDescription>{t('editDescription')}</DialogDescription>
+          <DialogTitle>{t('agencyManager.editTitle')}</DialogTitle>
+          <DialogDescription>{t('agencyManager.editDescription')}</DialogDescription>
         </DialogHeader>
         <UpdateAgencyManagerForm agencyManager={manager.data} agencies={agencies} id={id} setOpen={setOpen} />
       </DialogContent>

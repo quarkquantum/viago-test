@@ -5,19 +5,19 @@ import { client } from '@/lib/hono';
 import { ApiError } from '@repo/shared';
 import { useTranslations } from 'next-intl';
 
-type ResponseType = InferResponseType<(typeof client.api.alpha)['agency-managers'][':identifier']['$patch']>;
-type RequestType = InferRequestType<(typeof client.api.alpha)['agency-managers'][':identifier']['$patch']>['json'];
+type ResponseType = InferResponseType<(typeof client.api.admin)['agency-managers'][':identifier']['$patch']>;
+type RequestType = InferRequestType<(typeof client.api.admin)['agency-managers'][':identifier']['$patch']>['json'];
 
 export const useUpdateAgencyManager = (
   identifier: string,
   options?: { onSuccess?: () => void; onError?: () => void }
 ) => {
-  const t = useTranslations('agencyOwner');
+  const t = useTranslations();
   const queryClient = useQueryClient();
 
   return useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
-      const response = await client.api.alpha['agency-managers'][':identifier'].$patch({
+      const response = await client.api.admin['agency-managers'][':identifier'].$patch({
         param: { identifier },
         json,
       });
@@ -27,7 +27,7 @@ export const useUpdateAgencyManager = (
       return await response.json();
     },
     onSuccess: () => {
-      toast.success(t('success.updated'));
+      toast.success(t('agencyManager.success.updated'));
       queryClient.invalidateQueries({ queryKey: ['agency-managers'] });
       options?.onSuccess?.();
     },

@@ -1,7 +1,7 @@
 import type { Prisma } from '@repo/database';
 import { prisma } from '@repo/database';
-import { AgencyManagerStatus, SystemRoles } from '@repo/shared';
-import { agencyManagerIdSchema, agencyManagerQuerySchema, updateAgencyManagerSchema } from '@repo/validators';
+import { SystemRoles } from '@repo/shared';
+import { agencyManagerIdSchema, agencyManagerQuerySchema } from '@repo/validators';
 import { Hono } from 'hono';
 import { validator } from 'hono-openapi';
 import { AppError } from '@/errors';
@@ -20,7 +20,7 @@ const alphaAgencyManagerHandler = new Hono<HonoEnv>()
       const { sortBy, sortOrder, q, status } = query;
 
       const where: Prisma.AgencyMemberWhereInput = {
-        role: { name: 'OWNER' },
+        role: { name: SystemRoles.AGENCY_MANAGER },
         ...(status && { status }),
         ...(q && {
           OR: [
@@ -81,7 +81,7 @@ const alphaAgencyManagerHandler = new Hono<HonoEnv>()
   )
   .get(
     '/:identifier',
-    ...AlphaAgencyManagerRoutes.getAgencyManager,
+    ...AlphaAgencyManagerRoutes.listAgencyManagers,
     validator('param', agencyManagerIdSchema),
     async (ctx) => {
       const { identifier } = ctx.req.valid('param');
@@ -107,62 +107,6 @@ const alphaAgencyManagerHandler = new Hono<HonoEnv>()
       }
 
       return ctx.json({ data: manager }, 200);
-    }
-  )
-  .patch(
-    '/:identifier',
-    ...AlphaAgencyManagerRoutes.updateAgencyManager,
-    validator('param', agencyManagerIdSchema),
-    validator('json', updateAgencyManagerSchema),
-    async (ctx) => {
-      const { identifier } = ctx.req.valid('param');
-      const { firstName, lastName, phoneNumber, status, agencyId } = ctx.req.valid('json');
-
-      const existingManager = await prisma.agencyMember.findUnique({
-        where: { id: identifier },
-        include: { user: { include: { profile: true } }, agency: true },
-      });
-
-      if (!existingManager) {
-        throw new AppError({
-          code: 'not_found',
-          message: 'Agency manager not found',
-        });
-      }
-
-      const updatedManager = await prisma.agencyMember.update({
-        where: { id: identifier },
-        data: {
-          ...(status && { status }),
-          ...(agencyId && { agency: { connect: { id: agencyId } ,}}),
-          user: {
-            update: {
-              ...(firstName || lastName || phoneNumber
-                ? {
-                    profile: {
-                      update: {
-                        ...(firstName && { firstName }),
-                        ...(lastName && { lastName }),
-                        ...(phoneNumber && { phoneNumber }),
-                      },
-                    },
-                  }
-                : {}),
-            },
-          },
-        },
-        include: {
-          agency: true,
-          user: {
-            include: {
-              profile: true,
-            },
-          },
-          role: true,
-        },
-      });
-
-      return ctx.json({ data: updatedManager }, 200);
     }
   );
 

@@ -117,8 +117,7 @@
       "agency_required": "Identifiant de l'agence requis. Fournissez l'en-tête X-Agency-ID ou utilisez le sous-domaine.",
       "agency_invalid_status": "L'agence a un statut invalide : {status}",
       "agency_not_found": "Agence non trouvée",
-      "agency_suspended": "L'agence est actuellement suspendue",
-      "agency_inactive": "Cette agence est actuellement inactive ou suspendue. Accès refusé."
+      "agency_suspended": "L'agence est actuellement suspendue"
     }
   }
 }

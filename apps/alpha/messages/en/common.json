@@ -117,8 +117,7 @@
       "agency_required": "Agency identifier is required. Provide X-Agency-ID header or use subdomain.",
       "agency_invalid_status": "Agency has invalid status: {status}",
       "agency_not_found": "Agency not found",
-      "agency_suspended": "Agency is currently suspended",
-      "agency_inactive": "This agency is currently inactive or suspended. Access denied."
+      "agency_suspended": "Agency is currently suspended"
     }
   }
 }
