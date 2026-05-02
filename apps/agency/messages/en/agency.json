@@ -1,0 +1,46 @@
+{
+  "details": {
+    "title": "Agency Details",
+    "description": "Your agency profile information",
+    "owner": "Owner",
+    "ownerAccount": "Owner account",
+    "created": "Created",
+    "totalBuses": "Total Buses",
+    "totalDrivers": "Total Drivers",
+    "noDescription": "No description provided",
+    "activeBuses": "Active Buses",
+    "activeBusesDescription": "Buses currently on trips or scheduled",
+    "activeVehicles": "Active vehicles",
+    "registeredDrivers": "Registered drivers",
+    "seats": "seats",
+    "depot": "Depot",
+    "unknown": "Unknown",
+    "booked": "booked",
+    "drivers": "Drivers",
+    "associatedDrivers": "Associated drivers",
+    "noBuses": "No buses",
+    "noBusesDescription": "No buses registered for this agency.",
+    "noDrivers": "No drivers",
+    "noDriversDescription": "No drivers registered for this agency."
+  },
+  "sections": {
+    "recentBookings": "Recent Bookings",
+    "latestBookingActivity": "Latest booking activity",
+    "upcomingTrips": "Upcoming Trips",
+    "scheduledDepartures": "Scheduled departures"
+  },
+  "empty": {
+    "agencyNotFound": "Agency not found",
+    "agencyNotFoundDesc": "You don't have an agency associated with your account yet.",
+    "noRecentBookings": "No recent bookings",
+    "noRecentBookingsDesc": "There are no recent bookings available at the moment. Check back later.",
+    "noTrips": "No trips found",
+    "noTripsDesc": "There are no trips available at the moment. Check back later."
+  },
+  "updateOwnerDetails": "Update Owner Details",
+  "api": {
+    "success": {
+      "updated": "Agency updated successfully"
+    }
+  }
+}

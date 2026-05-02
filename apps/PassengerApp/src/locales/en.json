@@ -1,0 +1,355 @@
+{
+  "common": {
+    "next": "Next",
+    "back": "Back",
+    "ignore": "Ignore",
+    "seeMore": "See more",
+    "start": "Start",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "from": "From",
+    "to": "To",
+    "route": "Route",
+    "selectTravelDate": "Select travel date",
+    "search": "Search",
+    "clear": "Clear",
+    "clear_all": "Clear All",
+    "confirm": "Confirm",
+    "apply_filters": "Apply Filters"
+  },
+  "tabs": {
+    "home": "Home",
+    "my_tickets": "My Tickets",
+    "rides": "Rides",
+    "settings": "Settings"
+  },
+  "connection": {
+    "pendingActions": "{{count}} reservation(s) will sync when you're back online"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "No notifications yet",
+    "emptyDescription": "When you have new assignments or updates, they will appear here.",
+    "loading": "Loading notifications...",
+    "guest": {
+      "title": "Stay in the loop",
+      "message": "Sign in to receive real-time updates about your trips, bookings, and tickets."
+    },
+    "types": {
+      "NEW_TRIP": "New Trip Assigned",
+      "NEW_TICKET": "New Ticket Booked",
+      "NEW_BOOKING": "New Booking",
+      "NEW_AGENCY": "New Agency Joined",
+      "NEW_DRIVER": "New Driver Registered",
+      "NEW_CASHIER": "New Cashier Registered",
+      "TRIP_REMINDER": "Upcoming Trip Reminder"
+    },
+    "domains": {
+      "TRIP": "Trip",
+      "TICKET": "Ticket",
+      "BOOKING": "Booking",
+      "SYSTEM": "System",
+      "USER": "User"
+    },
+    "messages": {
+      "NEW_TRIP": "You have been assigned to trip: {{tripName}}",
+      "NEW_TICKET": "New ticket #{{ticketKey}} booked for trip: {{tripName}}",
+      "NEW_BOOKING": "New booking #{{bookingId}} for trip: {{tripName}}",
+      "NEW_AGENCY": "You have been added to agency: {{agencyName}}",
+      "NEW_DRIVER": "Welcome {{driverName}}! Your driver account is ready.",
+      "TRIP_REMINDER": "Your trip {{tripName}} starts in 15 minutes."
+    }
+  },
+  "tickets": {
+    "status": {
+      "issued": "Issued",
+      "cancelled": "Cancelled",
+      "expired": "Expired"
+    },
+    "loading": "Loading tickets...",
+    "empty": "No tickets yet",
+    "emptyMessage": "Book your first trip and your tickets will appear here.",
+    "browseRides": "Browse rides",
+    "seat": "Seat",
+    "date": "Date",
+    "price": "Price",
+    "refund": "Refund",
+    "guest": {
+      "title": "View Your Tickets",
+      "message": "Sign in to access all your tickets, or look up a ticket using your email or phone number.",
+      "lookupTitle": "Find your ticket",
+      "identifierLabel": "Email or phone number",
+      "identifierPlaceholder": "you@example.com or +237 6xx xxx xxx",
+      "lookupButton": "Search",
+      "lookupEmpty": "No tickets found for this email or phone number.",
+      "orSignIn": "Or sign in for full access"
+    }
+  },
+  "screens": {
+    "onboarding": {
+      "welcome_to": "Welcome to",
+      "signup": "Sign up",
+      "login": "Login",
+      "continue_as_guest": "Continue as Guest",
+      "findCheapTrips": {
+        "title": "Find the best bus fares",
+        "description": "Search and compare the cheapest bus trips available around you."
+      },
+      "reserveSeat": {
+        "title": "Reserve your seat instantly",
+        "description": "Pick your preferred seat and confirm your reservation effortlessly."
+      },
+      "onlinePayment": {
+        "title": "Enjoy secure online payments",
+        "description": "Pay for your trips directly in the app with fast and reliable payment options."
+      },
+      "travelWithEase": {
+        "title": "Travel with peace of mind",
+        "description": "Access your tickets anytime, track schedules, and receive reminders before departure."
+      },
+      "getStarted": {
+        "title": "Ready to go?",
+        "description": "Your next trip is only a tap away. Explore the app and start your journey."
+      }
+    },
+    "home": {
+      "title": "Home",
+      "welcome": "Welcome",
+      "greeting": "Hello, {{name}}",
+      "subtitle": "Where are you headed today?",
+      "whereToGo": "Where to go?",
+      "anyRoute": "Any route",
+      "anyDate": "Any date",
+      "nearby": "Nearby",
+      "myTrips": "My Trips",
+      "alerts": "Notifications",
+      "availableRides": "Available rides",
+      "noRides": "No rides available",
+      "noRidesMessage": "Check back later for new trips",
+      "findRide": "Find your ride",
+      "departure": "Departure",
+      "destination": "Destination",
+      "date": "Date",
+      "cityOrStation": "City or Station",
+      "searchBuses": "Search buses",
+      "from": "From",
+      "to": "To",
+      "selectTravelDate": "Select travel date"
+    },
+    "settings": {
+      "title": "Settings",
+      "language": "Language",
+      "profile": "Profile",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "emailNotEditable": "Email cannot be changed",
+      "phoneNotEditable": "Phone number cannot be changed",
+      "profileUpdated": "Profile updated successfully",
+      "updateFailed": "Failed to update profile",
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "account": "Account",
+      "logout": "Logout",
+      "logoutConfirmTitle": "Logout",
+      "logoutConfirmMessage": "Are you sure you want to logout?",
+      "loggedOut": "Logged out successfully",
+      "logoutFailed": "Failed to logout",
+      "notLoggedIn": "Not Logged In",
+      "notLoggedInMessage": "Please log in to view and edit your profile settings.",
+      "goToLogin": "Go to Login"
+    },
+    "tickets": {
+      "title": "My tickets",
+      "details": "Ticket Details",
+      "language": "Language",
+      "seat": "Seat",
+      "date": "Date",
+      "price": "Price"
+    },
+    "ticketDetails": {
+      "scanToValidate": "Scan QR code to validate",
+      "notFound": "Ticket not found"
+    },
+    "login": {
+      "title": "Login",
+      "heading": "Welcome Back",
+      "subtitle": "Sign in to continue your journey",
+      "emailRequired": "Email is required",
+      "emailLabel": "Email",
+      "passwordRequired": "Password is required",
+      "passwordLabel": "Password",
+      "forgotPassword": "Forgot password ?",
+      "loginButton": "Login",
+      "noAccount": "No account? Sign up",
+      "emailMinLength": "Email must be at least 1 character",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordMaxLength": "Password must be at most 32 characters",
+      "emailPlaceholder": "you@example.com",
+      "passwordPlaceholder": "Your password"
+    },
+    "register": {
+      "title": "Sign Up",
+      "heading": "Create Account",
+      "subtitle": "Join us and start your journey",
+      "firstNameLabel": "First Name",
+      "lastNameLabel": "Last Name",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm Password",
+      "phoneNumberLabel": "Phone Number",
+      "registerButton": "Sign Up",
+      "alreadyAccount": "Already have an account? Login",
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "firstNameMaxLength": "First name must be at most 32 characters",
+      "lastNameMaxLength": "Last name must be at most 32 characters",
+      "emailRequired": "Email is required",
+      "emailMinLength": "Email must be at least 1 character",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordMaxLength": "Password must be at most 32 characters",
+      "passwordsDoNotMatch": "Passwords do not match",
+      "success": "Registration successful!",
+      "firstNamePlaceholder": "Your First Name",
+      "lastNamePlaceholder": "Your Last Name",
+      "emailPlaceholder": "you@example.com",
+      "passwordPlaceholder": "Choose a password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "phoneNumberPlaceholder": "+237 6xx xxx xxx",
+      "phoneNumberMinLength": "Phone number must be at least 1 character"
+    },
+    "otp": {
+      "title": "Verify Your Email",
+      "subtitle": "We sent a 6-digit code to",
+      "expiresIn": "Code expires in {{minutes}} minutes",
+      "verify": "Verify",
+      "resend": "Resend Code",
+      "resendIn": "Resend in {{seconds}}",
+      "invalidOtp": "Invalid OTP",
+      "enterAllDigits": "Please enter all 6 digits",
+      "success": "Success",
+      "emailVerified": "Email verified successfully!",
+      "verificationFailed": "Verification Failed",
+      "invalidCode": "Invalid OTP code. Please try again.",
+      "codeSent": "Code Sent",
+      "newCodeSent": "A new verification code has been sent to your email.",
+      "error": "Error",
+      "resendFailed": "Failed to resend code. Please try again."
+    },
+    "rides": {
+      "title": "Rides",
+      "noRidesFound": "No rides found",
+      "noRidesMessage": "Try adjusting your search filters",
+      "no_results_title": "No results found",
+      "searchPlaceholder": "Search rides...",
+      "filters": "Filters",
+      "active_filters": "Active Filters",
+      "select_date": "Select Date",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "quick_filters": "Quick Filters",
+      "details": {
+        "date": "Date",
+        "duration": "Duration",
+        "seats": "Seats",
+        "reserved": "reserved",
+        "available": "available",
+        "soldOut": "Sold out",
+        "price": "Price",
+        "visitNotice": "To book this trip, visit the agency or station and purchase your ticket at the counter."
+      }
+    },
+    "notFound": {
+      "title": "Trip Not Found",
+      "description": "We couldn't find the trip you're looking for. It may have been cancelled or the ID is incorrect.",
+      "backToHome": "Back to Home"
+    }
+  },
+  "auth": {
+    "errors": {
+      "INVALID_EMAIL_OR_PASSWORD": "Invalid email or password",
+      "USER_NOT_FOUND": "User not found",
+      "EMAIL_NOT_VERIFIED": "Email not verified",
+      "INVALID_OTP": "Invalid OTP code",
+      "USER_ALREADY_EXISTS": "User already registered",
+      "unexpected": "Unexpected authentication error",
+      "default": "Something went wrong. Please try again"
+    }
+  },
+  "payment": {
+    "title": "Complete Payment",
+    "description": "You're about to pay for your bus ticket. Tap the button below to proceed with secure payment.",
+    "bookingId": "Booking ID",
+    "payNow": "Pay Now",
+    "processing": "Processing payment...",
+    "checkingStatus": "Checking payment status...",
+    "success": "Payment Successful!",
+    "successMessage": "Your ticket has been generated and is ready to use.",
+    "failed": "Payment Failed",
+    "failedMessage": "We couldn't process your payment. Please try again.",
+    "pending": "Payment Pending",
+    "pendingMessage": "Your payment is being processed. This may take a moment.",
+    "viewTickets": "View My Tickets",
+    "tryAgain": "Try Again",
+    "checkAgain": "Check Status",
+    "goHome": "Go to Home",
+    "error": "Error",
+    "browserNotAvailable": "Browser is not available on this device.",
+    "browserError": "Could not open payment page. Please try again.",
+    "initFailed": "Could not initialize payment. Please try again."
+  },
+  "reservation": {
+    "title": "Confirm Your Trip",
+    "subtitle": "Review your trip details before proceeding to payment",
+    "totalPrice": "Total Price",
+    "info": "A seat will be automatically assigned to you. Your ticket will be generated after successful payment.",
+    "autoSeatAssignment": "A seat will be automatically assigned to you based on availability.",
+    "proceedToPayment": "Proceed to Payment",
+    "selectSeatFirst": "Select a Seat First",
+    "yourSeat": "Your Seat",
+    "tapToSelectSeat": "Tap to select your seat",
+    "authRequired": "Login Required",
+    "authRequiredMessage": "You need to be logged in to book a trip.",
+    "seatRequired": "Seat Selection Required",
+    "seatRequiredMessage": "Please select a seat to continue with your booking.",
+    "error": "Booking Error",
+    "bookingFailed": "Could not create booking. Please try again.",
+    "reserveOffline": "Reserve Offline",
+    "offlineQueued": "Reservation saved offline. It will sync automatically when online.",
+    "syncSuccess": "{{count}} offline reservation(s) synced successfully",
+    "syncFailed": "Some offline reservations could not be synced yet"
+  },
+  "seatPicker": {
+    "title": "Select Your Seat",
+    "available": "Available",
+    "occupied": "Occupied",
+    "selected": "Selected",
+    "reserved": "Staff",
+    "driver": "Driver",
+    "seatSelected": "Seat #{{number}} selected",
+    "selectPrompt": "Tap on an available seat to select it",
+    "confirm": "Confirm Selection"
+  },
+  "rating": {
+    "title": "Rate Your Trip",
+    "driverLabel": "Driver: {{name}}",
+    "prompt": "How was your experience?",
+    "labels": {
+      "1": "Terrible",
+      "2": "Poor",
+      "3": "Average",
+      "4": "Good",
+      "5": "Excellent"
+    },
+    "commentLabel": "Comment (optional)",
+    "commentPlaceholder": "Tell us more about your experience...",
+    "submit": "Submit Rating",
+    "skip": "Skip",
+    "success": "Thank you for your feedback!",
+    "error": "Failed to submit rating"
+  }
+}

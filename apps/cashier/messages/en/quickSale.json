@@ -1,0 +1,90 @@
+{
+  "title": "Quick Sale",
+  "description": "Sell tickets quickly",
+  "noTrips": "No trips available",
+  "noSeats": "No seats available for this route",
+  "noTripsFound": "No trips found for this search",
+  "back": "Back",
+  "next": "Next",
+  "processing": "Processing...",
+  "confirmPayment": "Confirm Payment",
+  "confirmReservation": "Confirm Reservation",
+  "search": "Search",
+  "searchByRoute": "Search by route",
+  "clearSearch": "Clear",
+  "steps": {
+    "trip": {
+      "title": "Select Trip",
+      "description": "Choose a trip for the passenger"
+    },
+    "seat": {
+      "title": "Select Seat",
+      "description": "Choose departure, arrival and seat"
+    },
+    "passenger": {
+      "title": "Passenger Info",
+      "description": "Enter passenger details"
+    },
+    "payment": {
+      "title": "Payment",
+      "description": "Confirm and process payment"
+    }
+  },
+  "fields": {
+    "from": "Departure",
+    "to": "Arrival",
+    "seat": "Seat",
+    "location": "Location",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "date": "Date",
+    "identityDocumentType": "Identity Document Type",
+    "identityDocumentNumber": "Document Number",
+    "paymentType": "Payment Type"
+  },
+  "documentTypes": {
+    "CNI": "National ID (CNI)",
+    "CNI_RECEIPT": "CNI Receipt",
+    "PASSPORT": "Passport",
+    "RESIDENCE_PERMIT": "Residence Permit",
+    "STUDENT_CARD": "Student Card",
+    "SCHOOL_CARD": "School Card",
+    "LOSS_CERTIFICATE": "Loss Certificate"
+  },
+  "selectFrom": "Select departure",
+  "selectTo": "Select arrival",
+  "selectLocation": "Select location (optional)",
+  "selectIdentityDocumentType": "Select document type",
+  "phoneFormatHint": "Format: 002376 + 8 digits (e.g: 00237691234567)",
+  "placeholders": {
+    "firstName": "Enter first name",
+    "lastName": "Enter last name",
+    "email": "passenger@example.com (optional)",
+    "phone": "00237691234567",
+    "identityDocumentNumber": "Enter document number"
+  },
+  "payment": {
+    "paid": "Paid (Issue Ticket)",
+    "reserved": "Reserved (Collect Later)",
+    "confirmCash": "Confirm Cash Payment",
+    "confirmMobileMoney": "Confirm Mobile Money Payment",
+    "cashMessage": "Do you confirm that you received {amount} FCFA in cash?",
+    "mobileMoneyMessage": "Do you confirm that you received {amount} FCFA via Mobile Money?"
+  },
+  "summary": {
+    "title": "Summary",
+    "trip": "Trip",
+    "route": "Route",
+    "seat": "Seat",
+    "passenger": "Passenger",
+    "auto": "Auto-assigned"
+  },
+  "success": {
+    "title": "Sale Completed!",
+    "description": "The ticket has been created successfully.",
+    "newSale": "New Sale",
+    "viewTickets": "View Tickets"
+  }
+}

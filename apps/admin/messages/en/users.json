@@ -1,0 +1,44 @@
+{
+  "list": {
+    "title": "Users",
+    "description": "View and manage all users",
+    "searchPlaceholder": "Search users...",
+    "empty": {
+      "title": "No users found",
+      "description": "There are no users available at the moment."
+    },
+    "notFound": "User not found",
+    "notFoundDescription": "The user you are looking for does not exist.",
+    "backToUsers": "Back to Users"
+  },
+  "details": {
+    "title": "Agency User Profile",
+    "userTitle": "User Profile",
+    "description": "Manage user account details and agency association",
+    "noDescription": "No description",
+    "noAgency": "No agency assigned",
+    "goAgencies": "Go to Agencies"
+  },
+  "cashierTickets": {
+    "title": "Tickets",
+    "description": "Tickets associated with this cashier",
+    "searchPlaceholder": "Search a Trip...",
+    "unassigned": "Unassigned",
+    "empty": {
+      "title": "No tickets found",
+      "description": "This cashier has no associated tickets."
+    }
+  },
+  "api": {
+    "success": {
+      "created": "User created successfully",
+      "updated": "User updated successfully",
+      "deleted": "User deleted successfully",
+      "banned": "User banned successfully",
+      "unbanned": "User unbanned successfully",
+      "passwordReset": "Password reset successfully",
+      "sessionRevoked": "Session revoked successfully",
+      "resetEmailSent": "Reset password email sent successfully"
+    }
+  }
+}

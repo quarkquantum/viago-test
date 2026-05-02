@@ -1,0 +1,57 @@
+{
+  "list": {
+    "title": "Cashiers",
+    "description": "View and manage all your cashiers",
+    "searchPlaceholder": "Search Cashiers...",
+    "empty": {
+      "title": "No cashiers found",
+      "description": "There are no cashiers available at the moment."
+    },
+    "notFound": "User not found",
+    "notFoundDescription": "The User you are looking for does not exist.",
+    "backToUsers": "Back to Users"
+  },
+  "details": {
+    "title": "Cashier Profile",
+    "description": "View user information and booking history"
+  },
+  "create": {
+    "title": "Add New Cashier",
+    "description": "Fill the form to create a new cashier. Click save when you're done.",
+    "trigger": "Add New Cashier",
+    "submit": "Create Cashier",
+    "selectAgency": "Select agency ...",
+    "searchAgency": "Search agency ...",
+    "noTime": "No time set",
+    "api": {
+      "error": {
+        "create_failed": "Failed to create cashier user",
+        "already_assigned": "This user is already assigned to this agency"
+      }
+    }
+  },
+  "edit": {
+    "title": "Edit Cashier",
+    "description": "Make changes to this cashier here. Click save when you're done.",
+    "submit": "Save Changes",
+    "loading": "Loading cashier data...",
+    "error": "Failed to load cashier data",
+    "notFound": "No cashier data found"
+  },
+  "delete": {
+    "title": "Are you absolutely sure?",
+    "description": "This action cannot be undone. This will permanently delete the cashier account and remove their access to the system.",
+    "submit": "Hold to delete",
+    "deleting": "Deleting..."
+  },
+  "resetPassword": {
+    "trigger": "Send Reset Link"
+  },
+  "api": {
+    "success": {
+      "created": "Cashier created successfully",
+      "updated": "Cashier updated successfully",
+      "deleted": "Cashier deleted successfully"
+    }
+  }
+}

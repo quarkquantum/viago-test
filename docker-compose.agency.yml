@@ -1,0 +1,33 @@
+# Docker compose for Agency Next.js app
+version: "3.8"
+
+services:
+  agency:
+    build:
+      context: .
+      dockerfile: Dockerfile.agency
+      args:
+        APP_NAME: agency
+    ports:
+      - "3004:3000"
+    volumes:
+      - agency_node_modules:/app/node_modules
+      - agency_modules:/app/apps/agency/node_modules
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://135.125.159.234:3003
+      - NEXT_PUBLIC_APP_URL=http://localhost:3004
+      - NEXT_PUBLIC_COOKIE_DOMAIN=localhost
+      - POSTGRES_URL=postgresql://postgres:NyS9MFanHf7a7SHyqtVH@135.125.159.234:5432/viago
+      - DATABASE_URL=postgresql://postgres:NyS9MFanHf7a7SHyqtVH@135.125.159.234:5432/viago
+    restart: unless-stopped
+    networks:
+      - viago-dev
+
+volumes:
+  agency_node_modules:
+  agency_modules:
+
+networks:
+  viago-dev:
+    driver: bridge

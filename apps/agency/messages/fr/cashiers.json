@@ -1,0 +1,23 @@
+{
+  "list": {
+    "title": "Caissiers",
+    "description": "Voir et gérer tous vos caissiers",
+    "searchPlaceholder": "Rechercher des caissiers...",
+    "empty": {
+      "title": "Aucun caissier trouvé",
+      "description": "Il n'y a pas encore de caissiers. Ajoutez votre premier caissier."
+    },
+    "deleteConfirm": "Cela supprimera définitivement le caissier."
+  },
+  "api": {
+    "success": {
+      "created": "Caissier créé avec succès",
+      "updated": "Caissier mis à jour avec succès",
+      "deleted": "Caissier supprimé avec succès"
+    },
+    "error": {
+      "not_found": "Caissier introuvable",
+      "create_failed": "Échec de la création du caissier"
+    }
+  }
+}

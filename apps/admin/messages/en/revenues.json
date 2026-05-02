@@ -1,0 +1,19 @@
+{
+  "title": "Revenues",
+  "description": "Track tickets sold and revenue generated",
+  "periods": {
+    "daily": "Day",
+    "monthly": "Month",
+    "yearly": "Year"
+  },
+  "table": {
+    "period": "Period",
+    "tickets": "Tickets Sold",
+    "revenue": "Revenue",
+    "total": "Total"
+  },
+  "empty": {
+    "title": "No revenue data",
+    "description": "There is no revenue data available yet."
+  }
+}

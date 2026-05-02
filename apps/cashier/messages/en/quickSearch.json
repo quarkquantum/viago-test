@@ -1,0 +1,16 @@
+{
+  "title": "Quick Search",
+  "description": "Find a ticket by ID",
+  "fields": {
+    "ticketId": "Ticket ID"
+  },
+  "placeholders": {
+    "ticketId": "Enter ticket ID..."
+  },
+  "notFound": "Ticket not found",
+  "ticketInfo": "Ticket Information",
+  "passengerInfo": "Passenger Information",
+  "seat": "Seat",
+  "total": "Total",
+  "bookedOn": "Booked on"
+}

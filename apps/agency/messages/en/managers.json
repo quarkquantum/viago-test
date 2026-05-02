@@ -1,0 +1,23 @@
+{
+  "list": {
+    "title": "Managers",
+    "description": "View and manage all your agency managers",
+    "searchPlaceholder": "Search managers...",
+    "deleteConfirm": "This will permanently remove the manager from your agency.",
+    "empty": {
+      "title": "No managers found",
+      "description": "There are no managers yet. Add your first manager."
+    }
+  },
+  "api": {
+    "success": {
+      "created": "Manager created successfully",
+      "deleted": "Manager deleted successfully",
+      "updated": "Manager updated successfully"
+    },
+    "error": {
+      "not_found": "Manager not found",
+      "create_failed": "Failed to create manager"
+    }
+  }
+}

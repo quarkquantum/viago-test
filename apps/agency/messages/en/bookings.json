@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "All Bookings",
+    "description": "View and manage all your agency bookings",
+    "empty": {
+      "title": "Booking not found",
+      "description": "The booking you are looking for does not exist."
+    },
+    "searchPlaceholder": "Search...",
+    "filter": {
+      "status": "Status",
+      "all": "All",
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "table": {
+    "total": "Total",
+    "seatWithNumber": "Seat {number}"
+  },
+  "details": {
+    "title": "Booking Details",
+    "description": "View booking details and journey information",
+    "infoTitle": "Booking Information",
+    "status": "Status",
+    "totalAmount": "Total Amount",
+    "seatNumber": "Seat Number",
+    "agency": "Agency",
+    "created": "Created At",
+    "lastUpdated": "Last Updated",
+    "na": "N/A",
+    "passengerDetails": "Passenger Details",
+    "viewPassenger": "View Passenger",
+    "fullName": "Full Name",
+    "email": "Email",
+    "tripDetails": "Trip Details",
+    "viewTrip": "View Trip",
+    "tripName": "Trip Name",
+    "bus": "Bus",
+    "schedule": "Schedule",
+    "journey": "Journey Information",
+    "departure": "Departure",
+    "arrival": "Arrival",
+    "empty": {
+      "backToBookings": "Back to Bookings"
+    },
+    "driver": "Driver",
+    "bookedOn": "Booked On",
+    "viewProfile": "View Profile",
+    "bookingSummary": "Booking Summary"
+  },
+  "api": {
+    "success": {
+      "updated": "Booking updated successfully"
+    }
+  }
+}

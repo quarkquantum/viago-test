@@ -1,0 +1,45 @@
+{
+  "list": {
+    "title": "Voyages",
+    "description": "Voir et gérer tous vos voyages",
+    "searchPlaceholder": "Rechercher des voyages...",
+    "reservationType": {
+      "label": "Type de réservation",
+      "all": "Tous",
+      "numbered": "Avec réservation",
+      "unnumbered": "Sans réservation"
+    },
+    "empty": {
+      "title": "Aucun voyage trouvé",
+      "description": "Il n'y a aucun voyage disponible pour le moment. Revenez plus tard."
+    }
+  },
+  "units": {
+    "seats": "sièges"
+  },
+  "details": {
+    "title": "Détails du voyage",
+    "description": "Voir et gérer les détails du voyage",
+    "tripName": "Nom du voyage",
+    "busDriver": "Chauffeur de bus",
+    "busName": "Nom du bus",
+    "availableSeats": "Sièges disponibles",
+    "createdAt": "Créé le",
+    "status": "Statut",
+    "stationsRoute": "Itinéraire des gares",
+    "empty": {
+      "backToTrips": "Retour aux voyages"
+    },
+    "deleted": {
+      "title": "Voyage supprimé",
+      "description": "Ce voyage a été supprimé et n'est plus accessible."
+    }
+  },
+  "api": {
+    "success": {
+      "created": "Voyage créé avec succès",
+      "updated": "Voyage mis à jour avec succès",
+      "deleted": "Voyage supprimé avec succès"
+    }
+  }
+}

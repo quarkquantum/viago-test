@@ -1,0 +1,68 @@
+{
+  "list": {
+    "title": "Chauffeurs",
+    "description": "Consultez et gérez tous vos chauffeurs",
+    "searchPlaceholder": "Rechercher des chauffeurs...",
+    "empty": {
+      "title": "Aucun chauffeur trouvé",
+      "description": "Il n'y a aucun chauffeur pour le moment. Revenez plus tard."
+    },
+    "notFound": "Chauffeur non trouvé",
+    "notFoundDescription": "Le chauffeur que vous recherchez n'existe pas.",
+    "backToDrivers": "Retour aux chauffeurs"
+  },
+  "details": {
+    "title": "Profil du chauffeur",
+    "description": "Consultez les informations du chauffeur et l'historique des voyages",
+    "personalInfo": "Informations personnelles",
+    "personalInfoDescription": "Informations de base sur l'utilisateur",
+    "agencyDetails": "Détails de l'agence",
+    "agencyDetailsDescription": "Informations sur l'agence associée",
+    "noAgency": "Aucune agence assignée",
+    "tripsHistory": "Historique des voyages",
+    "tripsHistoryDescription": "Tous les voyages effectués par ce chauffeur",
+    "memberSince": "Membre depuis",
+    "verified": "Vérifié",
+    "notVerified": "Non vérifié"
+  },
+  "create": {
+    "title": "Ajouter un nouveau chauffeur",
+    "description": "Remplissez les détails ci-dessous pour créer un nouveau compte de chauffeur.",
+    "trigger": "Ajouter un nouveau chauffeur",
+    "submit": "Créer le chauffeur",
+    "selectAgency": "Sélectionner une agence ...",
+    "searchAgency": "Rechercher une agence ...",
+    "user": "Utilisateur",
+    "selectUser": "Sélectionner un utilisateur ...",
+    "searchUser": "Rechercher un utilisateur ...",
+    "noUserFound": "Aucun utilisateur trouvé."
+  },
+  "edit": {
+    "title": "Mettre à jour le chauffeur",
+    "description": "Remplissez les détails ci-dessous pour mettre à jour le compte du chauffeur.",
+    "submit": "Mettre à jour le chauffeur",
+    "loading": "Chargement des données du chauffeur...",
+    "error": "Échec du chargement des données du chauffeur",
+    "notFound": "Aucune donnée de chauffeur trouvée"
+  },
+  "delete": {
+    "title": "Êtes-vous absolument sûr ?",
+    "description": "Cette action ne peut pas être annulée. Cela supprimera définitivement le compte du chauffeur et retirera son accès au système.",
+    "submit": "Maintenir pour supprimer",
+    "deleting": "Suppression en cours..."
+  },
+  "resetPassword": {
+    "trigger": "Envoyer le lien de réinitialisation"
+  },
+  "ban": {
+    "unban": "Débannir le chauffeur",
+    "unbanning": "Débannissement en cours..."
+  },
+  "api": {
+    "success": {
+      "created": "Chauffeur créé avec succès",
+      "updated": "Chauffeur mis à jour avec succès",
+      "deleted": "Chauffeur supprimé avec succès"
+    }
+  }
+}

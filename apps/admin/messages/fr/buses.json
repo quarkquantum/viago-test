@@ -1,0 +1,61 @@
+{
+  "list": {
+    "title": "Bus",
+    "description": "Consultez et gérez tous vos bus",
+    "searchPlaceholder": "Rechercher des bus...",
+    "empty": {
+      "title": "Aucun bus trouvé",
+      "description": "Il n'y a aucun bus disponible pour le moment. Revenez plus tard."
+    },
+    "notFound": "Bus non trouvé",
+    "notFoundDescription": "Il n'y a pas de détails sur le bus pour le moment. Revenez plus tard.",
+    "backToBuses": "Retour aux bus"
+  },
+  "details": {
+    "title": "Détails du bus",
+    "description": "Consultez et gérez les détails du bus",
+    "busInfo": "Informations sur le bus",
+    "currentTrip": "Détails du voyage actuel",
+    "tripsHistory": "Historique des voyages",
+    "noActiveTrip": "Aucun voyage actif",
+    "noActiveTripDescription": "Ce bus n'est actuellement assigné à aucun voyage actif.",
+    "reservationType": "Type de réservation"
+  },
+  "fields": {
+    "currentTrip": "Voyage actuel"
+  },
+  "create": {
+    "title": "Ajouter un nouveau bus",
+    "description": "Remplissez les détails ci-dessous pour créer un nouveau bus.",
+    "trigger": "Ajouter un nouveau bus",
+    "submit": "Créer le bus",
+    "selectAgency": "Sélectionner une agence ...",
+    "searchAgency": "Rechercher une agence ...",
+    "selectBusType": "Sélectionner le type de bus ...",
+    "searchBusType": "Rechercher le type de bus ...",
+    "selectReservationType": "Sélectionner le type de réservation ...",
+    "plateNumberPlaceholder": "Numéro de plaque",
+    "modelPlaceholder": "Modèle",
+    "seatsPlaceholder": "Sièges",
+    "luxury": "Luxe",
+    "standard": "Standard"
+  },
+  "edit": {
+    "title": "Mettre à jour le bus",
+    "description": "Remplissez les détails ci-dessous pour mettre à jour les détails du bus.",
+    "submit": "Mettre à jour le bus"
+  },
+  "delete": {
+    "title": "Êtes-vous absolument sûr ?",
+    "description": "Cette action ne peut pas être annulée. Cela supprimera définitivement le bus et toutes les données associées.",
+    "submit": "Maintenir pour supprimer",
+    "deleting": "Suppression en cours..."
+  },
+  "api": {
+    "success": {
+      "created": "Bus créé avec succès",
+      "updated": "Bus mis à jour avec succès",
+      "deleted": "Bus supprimé avec succès"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "title": "Vente Rapide",
+  "description": "Vendez des billets rapidement",
+  "noTrips": "Aucun voyage disponible",
+  "noSeats": "Aucun siège disponible pour cet itinéraire",
+  "noTripsFound": "Aucun voyage trouvé pour cette recherche",
+  "back": "Retour",
+  "next": "Suivant",
+  "processing": "Traitement...",
+  "confirmPayment": "Confirmer le paiement",
+  "confirmReservation": "Confirmer la réservation",
+  "search": "Rechercher",
+  "searchByRoute": "Rechercher par itinéraire",
+  "clearSearch": "Effacer",
+  "steps": {
+    "trip": {
+      "title": "Sélectionner le voyage",
+      "description": "Choisissez un voyage pour le passager"
+    },
+    "seat": {
+      "title": "Sélectionner le siège",
+      "description": "Choisissez départ, arrivée et siège"
+    },
+    "passenger": {
+      "title": "Infos passager",
+      "description": "Entrez les coordonnées du passager"
+    },
+    "payment": {
+      "title": "Paiement",
+      "description": "Confirmez et traitez le paiement"
+    }
+  },
+  "fields": {
+    "from": "Départ",
+    "to": "Arrivée",
+    "seat": "Siège",
+    "location": "Lieu",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "date": "Date",
+    "identityDocumentType": "Type de pièce d'identité",
+    "identityDocumentNumber": "Numéro de pièce",
+    "paymentType": "Type de paiement"
+  },
+  "documentTypes": {
+    "CNI": "CNI",
+    "CNI_RECEIPT": "Reçu CNI",
+    "PASSPORT": "Passeport",
+    "RESIDENCE_PERMIT": "Permis de résidence",
+    "STUDENT_CARD": "Carte d'étudiant",
+    "SCHOOL_CARD": "Carte scolaire",
+    "LOSS_CERTIFICATE": "Certificat de perte"
+  },
+  "documentTypes": {
+    "CNI": "CNI",
+    "CNI_RECEIPT": "Reçu CNI",
+    "PASSPORT": "Passeport",
+    "RESIDENCE_PERMIT": "Carte de résident",
+    "STUDENT_CARD": "Carte d'étudiant",
+    "SCHOOL_CARD": "Carte scolaire",
+    "LOSS_CERTIFICATE": "Certificat de perte"
+  },
+  "selectFrom": "Sélectionner le départ",
+  "selectTo": "Sélectionner l'arrivée",
+  "selectLocation": "Sélectionner l'emplacement (optionnel)",
+  "selectIdentityDocumentType": "Sélectionner le type de pièce",
+  "phoneFormatHint": "Format: 002376 + 8 chiffres (ex: 00237691234567)",
+  "placeholders": {
+    "firstName": "Entrez le prénom",
+    "lastName": "Entrez le nom",
+    "email": "passager@exemple.com (optionnel)",
+    "phone": "00237691234567",
+    "identityDocumentNumber": "Numéro de la pièce d'identité"
+  },
+  "payment": {
+    "paid": "Payé (Émettre le billet)",
+    "reserved": "Réservé (Encaisser plus tard)",
+    "confirmCash": "Confirmer le paiement en espèces",
+    "confirmMobileMoney": "Confirmer le paiement Mobile Money",
+    "cashMessage": "Confirmez-vous avoir reçu {amount} FCFA en espèces ?",
+    "mobileMoneyMessage": "Confirmez-vous avoir reçu {amount} FCFA via Mobile Money ?"
+  },
+  "summary": {
+    "title": "Résumé",
+    "trip": "Voyage",
+    "route": "Itinéraire",
+    "seat": "Siège",
+    "passenger": "Passager",
+    "auto": "Auto-assigné"
+  },
+  "success": {
+    "title": "Vente terminée !",
+    "description": "Le billet a été créé avec succès.",
+    "newSale": "Nouvelle vente",
+    "viewTickets": "Voir les billets"
+  }
+}

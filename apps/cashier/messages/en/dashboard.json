@@ -1,0 +1,94 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "greetings": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "actions": "Actions",
+    "view": "View",
+    "viewAll": "View All",
+    "back": "Back",
+    "backToTickets": "Back to Tickets",
+    "backToTrips": "Back to Trips",
+    "seatsAvailable": "seats available",
+    "seat": "Seat",
+    "onRoute": "On Route",
+    "status": {
+      "verified": "Verified",
+      "notVerified": "Not Verified",
+      "all": "All",
+      "label": "Status",
+      "active": "Active",
+      "completed": "Completed",
+      "issued": "Issued",
+      "refunded": "Refunded",
+      "cancelled": "Cancelled",
+      "expired": "Expired"
+    },
+    "table": {
+      "trip": "Trip",
+      "description": "Description",
+      "status": "Status",
+      "seat": "Seat",
+      "price": "Price",
+      "createdAt": "Created At",
+      "action": "Action",
+      "tripName": "Trip Name",
+      "availableSeats": "Available Seats",
+      "departureTime": "Departure Time",
+      "arrivalTime": "Arrival Time",
+      "ticketId": "Ticket ID",
+      "passenger": "Passenger",
+      "departure": "Departure",
+      "from": "From",
+      "to": "To",
+      "seats": "Seats",
+      "agency": "Agency"
+    },
+    "empty": {
+      "noData": "No data available",
+      "noTickets": "No tickets found",
+      "noTrips": "No trips found",
+      "checkBackLater": "There are no items available at the moment. Check back later."
+    },
+    "navigation": {
+      "dashboard": "Dashboard",
+      "trips": "Trips",
+      "tickets": "Tickets"
+    }
+  },
+  "stats": {
+    "ticketsSoldToday": "Tickets Sold Today",
+    "upcomingTrips": "Upcoming Trips",
+    "currentTrips": "Current Trips",
+    "totalSoldToday": "Total tickets sold today",
+    "scheduledDepartures": "Scheduled departures",
+    "inProgress": "Trips currently in progress"
+  },
+  "empty": {
+    "noDataDescription": "Unable to load dashboard data. Please try again later.",
+    "noUpcomingTripsDescription": "There are no upcoming trips available at the moment.",
+    "noCurrentTripsDescription": "There are no current trips available at the moment.",
+    "noTicketsDescription": "No tickets have been sold today yet."
+  },
+  "sections": {
+    "upcomingTrips": "Upcoming Trips",
+    "upcomingTripsDesc": "Trips scheduled for departure",
+    "currentTrips": "Current Trips",
+    "currentTripsDesc": "Trips currently on the road",
+    "ticketsSoldToday": "Tickets Sold Today",
+    "ticketsSoldTodayDesc": "Latest ticket sales activity"
+  }
+}

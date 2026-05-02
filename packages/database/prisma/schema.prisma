@@ -1,0 +1,683 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Currency {
+  id String @unique
+
+  code   String
+  name   String
+  symbol String
+}
+
+enum TenantStatus {
+  PENDING
+  PROVISIONING
+  ACTIVE
+  SUSPENDED
+  DELETED
+}
+
+model Tenant {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  databaseName String  @unique
+  status      TenantStatus @default(PROVISIONING)
+
+  agencyRequestId String? @unique
+  agencyRequest   AgencyRequest? @relation()
+
+  ownerId String?
+  owner   User?   @relation(fields: [ownerId], references: [id], onDelete: SetNull)
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  provisionedAt DateTime?
+
+  approvedBy  String?
+  approvedAt  DateTime?
+  suspendedAt DateTime?
+  suspendedReason String?
+
+  agency Agency?
+
+  @@index([status])
+  @@index([slug])
+}
+
+model Country {
+  code         String    @id
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  name         String
+  latitude     Float?
+  longitude    Float?
+  iso3         String?
+  numericCode  String?
+  phoneCode    String?
+  capital      String?
+  tld          String?
+  native       String?
+  nationality  String?
+  emoji        String?
+  emojiU       String?
+  isEnabled    Boolean   @default(true)
+  regionId     String?
+  currencyCode String?
+  cities       City[]
+  language     Language? @relation(fields: [languageCode], references: [code])
+  languageCode String?
+  agencies     Agency[]
+
+  @@index([name])
+  @@index([iso3])
+  @@index([numericCode])
+  @@index([phoneCode])
+  @@index([capital])
+}
+
+model City {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name        String
+  countryCode String
+
+  latitude  Float @default(0)
+  longitude Float @default(0)
+
+  country   Country          @relation(fields: [countryCode], references: [code])
+  stations  Station[]
+  locations AgencyLocation[]
+
+  tripsDeparture Trip[] @relation("TripDepartureCity")
+  tripsArrival   Trip[] @relation("TripArrivalCity")
+}
+
+model Language {
+  code       String    @id
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  isEnabled  Boolean   @default(true)
+  name       String
+  nativeName String
+  direction  String
+  profiles   Profile[]
+  countries  Country[]
+
+  @@index([name])
+  @@index([nativeName])
+}
+
+model User {
+  id                 String    @id @default(cuid())
+  fullName           String
+  email              String
+  emailVerified      Boolean   @default(false)
+  image              String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @default(now()) @updatedAt
+  role               String?
+  mustChangePassword Boolean   @default(false)
+  banned             Boolean?  @default(false)
+  banReason          String?
+  banExpires         DateTime?
+  lastSignInAt       DateTime?
+  twoFactorEnabled   Boolean   @default(true)
+
+  notchPayAccountId String?
+
+  fcmToken String?
+
+  // driver rating
+  rating      Float @default(0)
+  reviewCount Int   @default(0)
+
+  sessions  Session[]
+  accounts  Account[]
+  twoFactor TwoFactor[]
+  bookings  Booking[]
+
+  tickets      Ticket[]
+  transactions Transaction[]
+
+  agencies          Agency[]
+  agencyMemberships AgencyMember[]
+  tenants           Tenant[]
+
+  profile Profile?
+
+  notificationsSent     Notification[] @relation("NotificationsSent")
+  notificationsReceived Notification[] @relation("NotificationsReceived")
+  reports               Report[]
+  feedbacksGiven        Feedback[]     @relation("PassengerFeedback")
+
+  @@unique([email])
+}
+
+model Profile {
+  id String @id @default(cuid())
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  firstName String?
+  lastName  String?
+
+  phoneNumber String?
+
+  identityDocumentType    String?
+  identityDocumentNumber String?
+
+  language     Language? @relation(fields: [languageCode], references: [code])
+  languageCode String?   @default("fr")
+}
+
+model Session {
+  id             String   @id @default(cuid())
+  expiresAt      DateTime
+  token          String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  ipAddress      String?
+  userAgent      String?
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  impersonatorId String?
+
+  @@unique([token])
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now()) @updatedAt
+}
+
+model TwoFactor {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  secret      String?
+  backupCodes String?
+}
+
+model Trip {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  name        String
+  description String?
+  status      String // shared enum TripStatus
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  departureTime DateTime?
+  arrivalTime   DateTime?
+
+  startedAt DateTime?
+  endedAt   DateTime?
+
+  busId String?
+  bus   Bus?    @relation(fields: [busId], references: [id], onDelete: Cascade)
+
+  driverId String?
+  driver   AgencyMember? @relation("Trip", fields: [driverId], references: [id], onDelete: Cascade)
+
+  agencyId String
+  agency   Agency @relation("Trips", fields: [agencyId], references: [id], onDelete: Cascade)
+
+  locationId String?
+  location   AgencyLocation? @relation("LocationTrips", fields: [locationId], references: [id], onDelete: SetNull)
+
+  departureCityId String?
+  departureCity   City?   @relation("TripDepartureCity", fields: [departureCityId], references: [id])
+
+  arrivalCityId String?
+  arrivalCity   City?   @relation("TripArrivalCity", fields: [arrivalCityId], references: [id])
+
+  stations  Station[]
+  bookings  Booking[]
+  reports   Report[]
+  feedbacks Feedback[]
+
+  @@index([agencyId])
+  @@index([locationId])
+}
+
+model Station {
+  id            String @id @default(cuid())
+  name          String
+  order         Int
+  startingPrice Float
+
+  trip   Trip   @relation(fields: [tripId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  tripId String
+
+  city   City   @relation(fields: [cityId], references: [id])
+  cityId String
+
+  bookingsFrom Booking[] @relation("BookingFrom")
+  bookingsTo   Booking[] @relation("BookingTo")
+
+  departureTime DateTime
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  status String @default("PENDING") // use shared enum StationStatus
+
+  @@unique([tripId, order])
+}
+
+model Booking {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  passengerId String
+  passenger   User   @relation(fields: [passengerId], references: [id], onDelete: Cascade)
+
+  total  Float
+  status String @default("PENDING") // use shared enum BookingStatus
+
+  seatId String
+  seat   Seat   @relation(fields: [seatId], references: [id], onDelete: Cascade)
+
+  tripId String
+  trip   Trip   @relation(fields: [tripId], references: [id], onDelete: Cascade)
+
+  fromStationId String
+  fromStation   Station @relation("BookingFrom", fields: [fromStationId], references: [id])
+
+  toStationId String
+  toStation   Station @relation("BookingTo", fields: [toStationId], references: [id])
+
+  agencyId String
+  agency   Agency @relation("Bookings", fields: [agencyId], references: [id])
+
+  locationId String?
+  location   AgencyLocation? @relation("LocationBookings", fields: [locationId], references: [id], onDelete: SetNull)
+
+  ticket Ticket? @relation("BookingTicket")
+
+  transaction Transaction?
+
+  @@index([agencyId])
+  @@index([locationId])
+}
+
+model Ticket {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  passengerId String
+  passenger   User   @relation(fields: [passengerId], references: [id], onDelete: Cascade)
+
+  bookingId String  @unique
+  booking   Booking @relation("BookingTicket", fields: [bookingId], references: [id], onDelete: Cascade)
+
+  seatId String
+  seat   Seat   @relation("SeatTicket", fields: [seatId], references: [id], onDelete: Cascade)
+
+  status String @default("ISSUED") // use shared enum TicketStatus
+
+  key String @unique
+}
+
+model Seat {
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  busId     String
+  bus       Bus       @relation(fields: [busId], references: [id], onDelete: Cascade)
+  bookings  Booking[]
+  number    Int
+  type      String    @default("PASSENGER")
+  tickets   Ticket[]  @relation("SeatTicket")
+}
+
+model Agency {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String?
+  status      String   @default("ACTIVE")
+  logo        String?
+  email       String?
+  countryCode String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  notchPayAccountId String? @unique
+
+  ownerId String?
+  owner   User?   @relation(fields: [ownerId], references: [id], onDelete: SetNull)
+  country Country @relation(fields: [countryCode], references: [code])
+
+  tenantId String? @unique
+  tenant   Tenant? @relation(fields: [tenantId], references: [id])
+
+  buses     Bus[]
+  members   AgencyMember[]
+  locations AgencyLocation[]
+
+  trips                 Trip[]              @relation("Trips")
+  bookings              Booking[]           @relation("Bookings")
+  transactions          Transaction[]
+  notificationsSent     Notification[]      @relation("AgencyNotificationsSent")
+  notificationsReceived Notification[]      @relation("AgencyNotificationsReceived")
+  reports               Report[]
+  feedbacks             Feedback[]
+  subscription          AgencySubscription?
+}
+
+model AgencyLocation {
+  id        String   @id @default(cuid())
+  name      String
+  address   String?
+  phone     String?
+  email     String?
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  agencyId String
+  agency   Agency @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  cityId String
+  city   City   @relation(fields: [cityId], references: [id])
+
+  members  AgencyMember[]
+  buses    Bus[]
+  trips    Trip[]         @relation("LocationTrips")
+  bookings Booking[]      @relation("LocationBookings")
+
+  @@unique([agencyId, cityId])
+  @@index([agencyId])
+  @@index([cityId])
+}
+
+model AgencyRequest {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  agencyName  String?
+
+  tenantId   String?   @unique
+  tenant     Tenant?   @relation(fields: [tenantId], references: [id])
+
+  legalForm   String   @default("SARL")
+  description String?
+  countryCode String   @default("CM")
+  cityId      String?
+
+  firstName   String?
+  lastName    String?
+  email       String?
+  phoneNumber String?
+
+  // Company info
+  city          String?
+  address       String?
+  officialPhone String?
+  officialEmail String?
+
+  // Contact person
+  position    String?
+  directPhone String?
+  directEmail String?
+
+  // Operations data
+  numberOfAgencies Int?
+  citiesServed     String?
+  numberOfBuses    Int?
+  busType          String? // NUMBERED, NON_NUMBERED, MIXTE
+
+  // Documents
+  logo            String?
+  rccmDocument    String?
+  taxCardDocument String?
+
+  // Account
+  password      String?
+  accountEmail  String?
+
+  status          String    @default("PENDING")
+  rejectionReason String?
+  reviewedAt      DateTime?
+
+  @@index([status, createdAt])
+  @@index([email])
+}
+
+model AgencyRole {
+  id        String   @id @default(cuid())
+  name      String   @unique // OWNER, DRIVER, CASHIER
+  createdAt DateTime @default(now())
+
+  members AgencyMember[]
+}
+
+model AgencyMember {
+  id        String   @id @default(cuid())
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  agencyId String
+  agency   Agency @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  locationId String?
+  location   AgencyLocation? @relation(fields: [locationId], references: [id], onDelete: SetNull)
+
+  roleId String
+  role   AgencyRole @relation(fields: [roleId], references: [id])
+
+  trips             Trip[]     @relation("Trip")
+  feedbacksReceived Feedback[] @relation("DriverFeedback")
+
+  @@unique([userId, agencyId])
+  @@index([agencyId])
+  @@index([locationId])
+}
+
+model Bus {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+  status    String   @default("ACTIVE")
+
+  maxPlaces    Int
+  licensePlate String @unique
+
+  agencyId String
+  agency   Agency @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  locationId String?
+  location   AgencyLocation? @relation(fields: [locationId], references: [id], onDelete: SetNull)
+
+  trips Trip[]
+  seats Seat[]
+
+  seatReservationType String @default("UNNUMBERED") // use shared enum BusSeatPolicy
+
+  @@index([agencyId])
+  @@index([locationId])
+}
+
+model Transaction {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  reference String @unique
+  amount    Int
+  currency  String @default("XAF")
+  status    String @default("PENDING") // use shared enum TransactionStatus
+  metadata  Json?
+
+  agencyId String
+  agency   Agency @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  bookingId String?  @unique
+  booking   Booking? @relation(fields: [bookingId], references: [id])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  recipientId String?
+  actorId     String?
+
+  recipientAgencyId String?
+  actorAgencyId     String?
+
+  domain String
+  type   String
+  status String @default("UNREAD") // use shared enum NotificationStatus
+
+  dedupeKey String? @unique
+
+  entityType String
+  entityId   String
+
+  payload Json
+  readAt  DateTime?
+
+  actor     User? @relation("NotificationsSent", fields: [actorId], references: [id], onDelete: Cascade)
+  recipient User? @relation("NotificationsReceived", fields: [recipientId], references: [id], onDelete: Cascade)
+
+  actorAgency     Agency? @relation("AgencyNotificationsSent", fields: [actorAgencyId], references: [id], onDelete: Cascade)
+  recipientAgency Agency? @relation("AgencyNotificationsReceived", fields: [recipientAgencyId], references: [id], onDelete: Cascade)
+
+  @@index([recipientId, status, createdAt])
+  @@index([recipientId, domain, createdAt])
+  @@index([recipientId, type, createdAt])
+  @@index([entityType, entityId, createdAt])
+  @@index([createdAt])
+}
+
+model Report {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  type   String // shared enum ReportType
+  status String @default("PENDING") // shared enum ReportStatus
+
+  content String?
+
+  reporterId String
+  reporter   User   @relation(fields: [reporterId], references: [id], onDelete: Cascade)
+
+  tripId String
+  trip   Trip   @relation(fields: [tripId], references: [id], onDelete: Cascade)
+
+  agencyId String
+  agency   Agency @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  @@index([reporterId, createdAt])
+  @@index([tripId, createdAt])
+  @@index([agencyId, createdAt])
+  @@index([type, createdAt])
+  @@index([status, createdAt])
+}
+
+model Feedback {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  rating  Int
+  comment String?
+
+  passengerId String
+  passenger   User   @relation("PassengerFeedback", fields: [passengerId], references: [id], onDelete: Cascade)
+
+  driverId String
+  driver   AgencyMember @relation("DriverFeedback", fields: [driverId], references: [id], onDelete: Cascade)
+
+  tripId String
+  trip   Trip   @relation(fields: [tripId], references: [id], onDelete: Cascade)
+
+  agencyId String
+  agency   Agency @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  @@index([passengerId, createdAt])
+  @@index([driverId, createdAt])
+  @@index([tripId, createdAt])
+  @@index([agencyId, createdAt])
+}
+
+model AgencySubscription {
+  id             String    @id @default(cuid())
+  agencyId       String    @unique
+  agency         Agency    @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  status         String    @default("TRIAL")
+  trialStartDate DateTime  @default(now())
+  trialEndDate   DateTime
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  invoices       Invoice[]
+
+  @@index([status])
+  @@index([trialEndDate])
+}
+
+model Invoice {
+  id             String             @id @default(cuid())
+  subscriptionId String
+  subscription   AgencySubscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+  amount         Float
+  currency       String             @default("XAF")
+  status         String             @default("PENDING")
+  issuedAt       DateTime           @default(now())
+  dueDate        DateTime
+  paidAt         DateTime?
+  description    String?
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+
+  @@index([subscriptionId, status])
+  @@index([status])
+  @@index([dueDate])
+}

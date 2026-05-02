@@ -1,0 +1,13 @@
+{
+  "name": "studio",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "pnpm with-env prisma studio --config=../../packages/database/prisma.config.ts --port 3007",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "devDependencies": {
+    "prisma": "^7.4.1"
+  }
+}

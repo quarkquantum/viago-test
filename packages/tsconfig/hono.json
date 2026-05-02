@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "types": ["node"],
+    "lib": ["ESNext"],
+    "skipDefaultLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "outDir": "${configDir}/dist",
+    "esModuleInterop": true,
+    "noEmit": false
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

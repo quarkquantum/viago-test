@@ -1,0 +1,178 @@
+{
+  "common": {
+    "welcome": "Bienvenue",
+    "greetings": {
+      "morning": "Bonjour",
+      "afternoon": "Bon après-midi",
+      "evening": "Bonsoir"
+    },
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "create": "Créer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "actions": "Actions",
+    "view": "Voir",
+    "viewAll": "Voir tout",
+    "back": "Retour",
+    "backToTickets": "Retour aux billets",
+    "backToTrips": "Retour aux voyages",
+    "status": {
+      "verified": "Vérifié",
+      "notVerified": "Non vérifié",
+      "all": "Tous",
+      "label": "Statut",
+      "active": "Actif",
+      "completed": "Terminé",
+      "issued": "Émis",
+      "refunded": "Remboursé",
+      "cancelled": "Annulé",
+      "expired": "Expiré"
+    },
+    "table": {
+      "trip": "Voyage",
+      "description": "Description",
+      "status": "Statut",
+      "seat": "Siège",
+      "price": "Prix",
+      "createdAt": "Créé le",
+      "action": "Action",
+      "tripName": "Nom du voyage",
+      "availableSeats": "Sièges disponibles",
+      "departureTime": "Heure de départ",
+      "arrivalTime": "Heure d'arrivée",
+      "ticketId": "ID du billet",
+      "passenger": "Passager",
+      "departure": "Départ",
+      "from": "De",
+      "to": "À",
+      "seats": "Sièges",
+      "agency": "Agence"
+    },
+    "empty": {
+      "noData": "Aucune donnée disponible",
+      "noTickets": "Aucun billet trouvé",
+      "noTrips": "Aucun voyage trouvé",
+      "checkBackLater": "Il n'y a aucun élément disponible pour le moment. Revenez plus tard."
+    },
+    "navigation": {
+      "dashboard": "Tableau de bord",
+      "trips": "Voyages",
+      "tickets": "Billets"
+    }
+  },
+  "list": {
+    "title": "Tous les billets",
+    "description": "Voir et gérer tous vos billets",
+    "searchPlaceholder": "Rechercher des billets...",
+    "empty": {
+      "description": "Il n'y a aucun billet à afficher. Créez votre premier billet pour commencer."
+    },
+    "status": {
+      "verified": "Vérifié",
+      "notVerified": "Non vérifié",
+      "all": "Tous",
+      "label": "Statut",
+      "active": "Actif",
+      "completed": "Terminé",
+      "issued": "Émis",
+      "refunded": "Remboursé",
+      "cancelled": "Annulé",
+      "expired": "Expiré"
+    }
+  },
+  "details": {
+    "title": "Détails du billet",
+    "description": "Voir les détails du billet et supprimer le billet",
+    "deleteTitle": "Supprimer le billet",
+    "holdToDelete": "Maintenir pour supprimer",
+    "deleting": "Suppression...",
+    "deleteConfirmTitle": "Êtes-vous absolument sûr ?",
+    "deleteConfirmDescription": "Êtes-vous sûr de vouloir supprimer ce billet ?",
+    "journeyInfo": "Informations sur le voyage",
+    "viewTrip": "Voir le voyage",
+    "departure": "Départ",
+    "arrival": "Arrivée",
+    "driver": "Chauffeur",
+    "bus": "Bus",
+    "agency": "Agence",
+    "bookingSummary": "Résumé de la réservation",
+    "bookedOn": "Réservé le",
+    "viewProfile": "Voir le profil",
+    "notFound": "Billet non trouvé",
+    "notFoundDescription": "Le billet que vous recherchez n'existe pas.",
+    "backToTickets": "Retour aux billets"
+  },
+  "create": {
+    "title": "Créer un billet",
+    "description": "Créer un nouveau billet pour un passager",
+    "seatsAvailable": "{count, plural, =1 {# siège disponible} other {# sièges disponibles}}",
+    "selectDeparture": "Sélectionner la gare de départ...",
+    "selectArrival": "Sélectionner la gare d'arrivée...",
+    "selectSeat": "Sélectionner un siège...",
+    "labels": {
+      "passengerEmail": "Email du passager",
+      "from": "De",
+      "to": "À",
+      "seatNumber": "Numéro de siège",
+      "price": "Prix"
+    },
+    "placeholders": {
+      "selectPassenger": "Sélectionner un e-mail...",
+      "searchPassenger": "Rechercher un passager...",
+      "selectDeparture": "Sélectionner la gare de départ...",
+      "searchStations": "Rechercher des gares...",
+      "selectArrival": "Sélectionner la gare d'arrivée...",
+      "selectDepartureFirst": "Sélectionnez d'abord le départ...",
+      "selectSeat": "Sélectionner un siège...",
+      "noSeats": "Aucun siège disponible",
+      "selectStationsFirst": "Sélectionnez d'abord les gares...",
+      "searchSeats": "Rechercher des sièges..."
+    },
+    "messages": {
+      "loading": "Chargement...",
+      "noPassengerFound": "Aucun passager trouvé.",
+      "noStationFound": "Aucune gare trouvée.",
+      "seatsAvailable": "{count, plural, =1 {# siège disponible} other {# sièges disponibles}}",
+      "success": "Billet créé avec succès",
+      "error": "Échec de la création du billet"
+    },
+    "validation": {
+      "passengerRequired": "L'adresse e-mail est requise.",
+      "fromRequired": "La gare de départ est requise.",
+      "toRequired": "La gare d'arrivée est requise.",
+      "seatRequired": "Le siège est requis."
+    },
+    "dialog": {
+      "title": "Êtes-vous absolument sûr ?",
+      "description": "Êtes-vous sûr de vouloir créer ce billet ?",
+      "cancel": "Annuler",
+      "continue": "Continuer",
+      "creating": "Création...",
+      "submit": "Créer le billet"
+    },
+    "trigger": "Créer un nouveau billet",
+    "modal": {
+      "title": "Ajouter un nouveau billet",
+      "description": "Remplissez les détails ci-dessous pour créer un nouveau billet."
+    }
+  },
+  "edit": {
+    "title": "Modifier le billet",
+    "description": "Apportez des modifications à votre billet ici. Cliquez sur enregistrer lorsque vous avez terminé.",
+    "submit": "Enregistrer les modifications",
+    "updating": "Mise à jour..."
+  },
+  "api": {
+    "success": {
+      "created": "Billet créé avec succès",
+      "updated": "Billet mis à jour avec succès",
+      "deleted": "Billet supprimé avec succès"
+    }
+  }
+}

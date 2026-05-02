@@ -1,0 +1,26 @@
+{
+  "name": "@repo/validators",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./lib": "./lib/index.ts",
+    "./schema": "./schema/index.ts"
+  },
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "check-types": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.19"
+  },
+  "devDependencies": {
+    "@repo/database": "workspace:*",
+    "@repo/shared": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "^25.3.0",
+    "typescript": "5.9.3",
+    "zod": "^4.3.6"
+  }
+}

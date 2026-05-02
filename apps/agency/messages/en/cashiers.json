@@ -1,0 +1,23 @@
+{
+  "list": {
+    "title": "Cashiers",
+    "description": "View and manage all your cashiers",
+    "searchPlaceholder": "Search cashiers...",
+    "empty": {
+      "title": "No cashiers found",
+      "description": "There are no cashiers yet. Add your first cashier."
+    },
+    "deleteConfirm": "This will permanently delete the cashier."
+  },
+  "api": {
+    "success": {
+      "created": "Cashier created successfully",
+      "updated": "Cashier updated successfully",
+      "deleted": "Cashier deleted successfully"
+    },
+    "error": {
+      "not_found": "Cashier not found",
+      "create_failed": "Failed to create cashier"
+    }
+  }
+}

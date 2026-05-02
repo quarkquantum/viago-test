@@ -1,0 +1,116 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "greetings": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "actions": "Actions",
+    "view": "View",
+    "viewAll": "View All",
+    "back": "Back",
+    "backToTickets": "Back to Tickets",
+    "backToTrips": "Back to Trips",
+    "status": {
+      "verified": "Verified",
+      "notVerified": "Not Verified",
+      "all": "All",
+      "label": "Status",
+      "active": "Active",
+      "ongoing": "Ongoing",
+      "completed": "Completed",
+      "issued": "Issued",
+      "refunded": "Refunded",
+      "cancelled": "Cancelled",
+      "expired": "Expired"
+    },
+    "table": {
+      "trip": "Trip",
+      "description": "Description",
+      "status": "Status",
+      "seat": "Seat",
+      "price": "Price",
+      "createdAt": "Created At",
+      "action": "Action",
+      "tripName": "Trip Name",
+      "availableSeats": "Available Seats",
+      "departureTime": "Departure Time",
+      "arrivalTime": "Arrival Time",
+      "ticketId": "Ticket ID",
+      "passenger": "Passenger",
+      "departure": "Departure",
+      "from": "From",
+      "to": "To",
+      "seats": "Seats",
+      "agency": "Agency"
+    },
+    "empty": {
+      "noData": "No data available",
+      "noTickets": "No tickets found",
+      "noTrips": "No trips found",
+      "checkBackLater": "There are no items available at the moment. Check back later."
+    },
+    "navigation": {
+      "dashboard": "Dashboard",
+      "trips": "Trips",
+      "tickets": "Tickets"
+    }
+  },
+  "list": {
+    "title": "Trips",
+    "description": "View and manage all your trips",
+    "searchPlaceholder": "Search trips...",
+    "empty": {
+      "description": "There are no trips available at the moment. Check back later."
+    }
+  },
+  "details": {
+    "title": "Trip Details",
+    "description": "View and manage trip details",
+    "info": {
+      "tripName": "Trip Name",
+      "bus": "Bus",
+      "date": "Date",
+      "status": "Status"
+    },
+    "stationsRoute": {
+      "title": "Stations Route",
+      "availableSeats": "Available",
+      "reservedSeats": "Reserved",
+      "to": "to",
+      "terminalStation": "Terminal station"
+    },
+    "seatMap": {
+      "title": "Seat Availability",
+      "available": "Available",
+      "occupied": "Occupied",
+      "total": "Total seats",
+      "driver": "Driver",
+      "selectFrom": "From station",
+      "selectTo": "To station",
+      "selectSegmentHint": "Select a departure and arrival station to see seat availability."
+    },
+    "notFound": {
+      "title": "Trip Not Found",
+      "description": "There are no trips available at the moment. Check back later.",
+      "backToTrips": "Back to Trips"
+    },
+    "bookings": {
+      "title": "Bookings",
+      "description": "Manage bookings for this trip",
+      "noBookings": "No bookings found",
+      "noBookingsDescription": "There are no bookings available at the moment. Check back later."
+    }
+  }
+}

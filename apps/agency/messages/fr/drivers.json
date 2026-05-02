@@ -1,0 +1,46 @@
+{
+  "list": {
+    "title": "Chauffeurs",
+    "description": "Voir et gérer tous vos chauffeurs",
+    "searchPlaceholder": "Rechercher des chauffeurs...",
+    "empty": {
+      "title": "Aucun chauffeur trouvé",
+      "description": "Il n'y a aucun chauffeur disponible pour le moment. Revenez plus tard."
+    },
+    "filter": {
+      "status": "Statut",
+      "all": "Tous",
+      "active": "Actif",
+      "inactive": "Inactif"
+    }
+  },
+  "details": {
+    "title": "Profil du chauffeur",
+    "description": "Voir les informations du chauffeur et l'historique des réservations",
+    "personalInfo": "Informations personnelles",
+    "personalInfoDesc": "Informations de base sur le chauffeur",
+    "fullName": "Nom complet",
+    "email": "Adresse email",
+    "phone": "Numéro de téléphone",
+    "accountDetails": "Détails du compte",
+    "accountDetailsDesc": "Aperçu de l'activité du chauffeur",
+    "totalTrips": "Total des voyages",
+    "memberSince": "Membre depuis",
+    "status": "Statut",
+    "verified": "Vérifié",
+    "notVerified": "Non vérifié",
+    "tripsHistory": "Historique des voyages",
+    "tripsHistoryDesc": "Tous les voyages effectués par ce chauffeur",
+    "empty": {
+      "backToDrivers": "Retour aux chauffeurs",
+      "noTrips": "Aucun voyage trouvé",
+      "noTripsDesc": "Ce chauffeur n'a pas encore effectué de voyage."
+    }
+  },
+  "api": {
+    "success": {
+      "deleted": "Chauffeur supprimé avec succès",
+      "created": "Chauffeur créé avec succès"
+    }
+  }
+}

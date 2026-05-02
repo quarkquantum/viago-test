@@ -1,0 +1,25 @@
+{
+  "profile": {
+    "title": "Profil du passager",
+    "description": "Voir les informations du passager et l'historique des billets",
+    "personalInfo": {
+      "title": "Informations personnelles",
+      "description": "Informations de base sur le passager",
+      "fullName": "Nom complet",
+      "email": "Adresse email",
+      "phone": "Numéro de téléphone"
+    },
+    "accountDetails": {
+      "title": "Détails du compte",
+      "description": "Aperçu de l'activité du passager",
+      "totalTickets": "Total des billets",
+      "memberSince": "Membre depuis",
+      "status": "Statut"
+    }
+  },
+  "empty": {
+    "title": "Passager introuvable",
+    "description": "Le passager que vous recherchez n'existe pas.",
+    "backToBookings": "Retour aux réservations"
+  }
+}

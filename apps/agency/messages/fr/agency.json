@@ -1,0 +1,46 @@
+{
+  "details": {
+    "title": "Détails de l'agence",
+    "description": "Informations sur le profil de votre agence",
+    "owner": "Propriétaire",
+    "ownerAccount": "Compte propriétaire",
+    "created": "Créé",
+    "totalBuses": "Buses totales",
+    "totalDrivers": "Chauffeurs totaux",
+    "noDescription": "Aucune description fournie",
+    "activeBuses": "Bus actifs",
+    "activeBusesDescription": "Bus actuellement en voyage ou programmés",
+    "activeVehicles": "Véhicules actifs",
+    "registeredDrivers": "Chauffeurs enregistrés",
+    "seats": "sièges",
+    "depot": "Dépôt",
+    "unknown": "Inconnu",
+    "booked": "réservé",
+    "drivers": "Chauffeurs",
+    "associatedDrivers": "Chauffeurs associés",
+    "noBuses": "Aucun bus",
+    "noBusesDescription": "Aucun bus enregistré pour cette agence.",
+    "noDrivers": "Aucun chauffeur",
+    "noDriversDescription": "Aucun chauffeur enregistré pour cette agence."
+  },
+  "sections": {
+    "recentBookings": "Réservations récentes",
+    "latestBookingActivity": "Dernières activités de réservation",
+    "upcomingTrips": "Voyages à venir",
+    "scheduledDepartures": "Départs prévus"
+  },
+  "empty": {
+    "agencyNotFound": "Agence introuvable",
+    "agencyNotFoundDesc": "Vous n'avez pas encore d'agence associée à votre compte.",
+    "noRecentBookings": "Aucune réservation récente",
+    "noRecentBookingsDesc": "Il n'y a aucune réservation récente pour le moment. Revenez plus tard.",
+    "noTrips": "Aucun voyage trouvé",
+    "noTripsDesc": "Il n'y a aucun voyage disponible pour le moment. Revenez plus tard."
+  },
+  "updateOwnerDetails": "Modifier les détails du propriétaire",
+  "api": {
+    "success": {
+      "updated": "Agence mise à jour avec succès"
+    }
+  }
+}

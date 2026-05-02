@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Toutes les réservations",
+    "description": "Voir et gérer toutes les réservations de votre agence",
+    "empty": {
+      "title": "Réservation non trouvée",
+      "description": "La réservation que vous recherchez n'existe pas."
+    },
+    "searchPlaceholder": "Rechercher...",
+    "filter": {
+      "status": "Statut",
+      "all": "Tout",
+      "pending": "En attente",
+      "confirmed": "Confirmé",
+      "cancelled": "Annulé"
+    }
+  },
+  "table": {
+    "total": "Total",
+    "seatWithNumber": "Siège {number}"
+  },
+  "details": {
+    "title": "Détails de la réservation",
+    "description": "Voir les détails de la réservation et les informations sur le voyage",
+    "infoTitle": "Informations sur la réservation",
+    "status": "Statut",
+    "totalAmount": "Montant total",
+    "seatNumber": "Numéro de siège",
+    "agency": "Agence",
+    "created": "Créé le",
+    "lastUpdated": "Mis à jour le",
+    "na": "N/A",
+    "passengerDetails": "Détails du passager",
+    "viewPassenger": "Voir le passager",
+    "fullName": "Nom complet",
+    "email": "Email",
+    "tripDetails": "Détails du voyage",
+    "viewTrip": "Voir le voyage",
+    "tripName": "Nom du voyage",
+    "bus": "Bus",
+    "schedule": "Horaire",
+    "journey": "Informations sur le voyage",
+    "departure": "Départ",
+    "arrival": "Arrivée",
+    "empty": {
+      "backToBookings": "Retour aux réservations"
+    },
+    "driver": "Chauffeur",
+    "bookedOn": "Réservé le",
+    "viewProfile": "Voir le profil",
+    "bookingSummary": "Résumé de la réservation"
+  },
+  "api": {
+    "success": {
+      "updated": "Réservation mise à jour avec succès"
+    }
+  }
+}

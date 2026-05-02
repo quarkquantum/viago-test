@@ -1,0 +1,40 @@
+{
+  "title": "Locations",
+  "description": "Manage agency locations and branches",
+  "searchPlaceholder": "Search locations...",
+  "create": "Add Location",
+  "createTitle": "Create Location",
+  "createDescription": "Add a new location for an agency",
+  "table": {
+    "name": "Name",
+    "agency": "Agency",
+    "city": "City",
+    "address": "Address",
+    "members": "Members",
+    "trips": "Trips",
+    "status": "Status",
+    "action": "Action"
+  },
+  "fields": {
+    "agency": "Agency",
+    "city": "City",
+    "name": "Name",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "selectAgency": "Select agency",
+  "selectCity": "Select city",
+  "placeholders": {
+    "name": "Enter location name",
+    "address": "Enter address",
+    "phone": "+237 XXX XXX XXX",
+    "email": "location@example.com"
+  },
+  "cancel": "Cancel",
+  "creating": "Creating...",
+  "empty": {
+    "title": "No locations",
+    "description": "There are no agency locations yet."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Emplacements",
+  "description": "Gérer les agences et succursales",
+  "loading": "Chargement...",
+  "searchPlaceholder": "Rechercher des emplacements...",
+  "create": "Ajouter un emplacement",
+  "createTitle": "Créer un emplacement",
+  "createDescription": "Ajouter un nouvel emplacement pour votre agencia",
+  "table": {
+    "name": "Nom",
+    "city": "Ville",
+    "address": "Adresse",
+    "members": "Membres",
+    "trips": "Voyages",
+    "status": "Statut",
+    "action": "Action"
+  },
+  "fields": {
+    "country": "Pays",
+    "city": "Ville",
+    "name": "Nom",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email"
+  },
+  "selectCountry": "Sélectionner un pays",
+  "selectCountryFirst": "Sélectionnez d'abord un pays",
+  "selectCity": "Sélectionner une ville",
+  "placeholders": {
+    "name": "Entrez le nom de l'emplacement",
+    "address": "Entrez l'adresse",
+    "phone": "+237 XXX XXX XXX",
+    "email": "emplacement@exemple.com"
+  },
+  "cancel": "Annuler",
+  "creating": "Création...",
+  "empty": {
+    "title": "Aucun emplacement",
+    "description": "Il n'y a pas encore d'emplacements. Ajoutez votre premier emplacement."
+  }
+}
