@@ -108,11 +108,11 @@ export const auth = betterAuth({
           });
         }
 
-        // if (user.role !== SystemRoles.ADMIN) {
-        //   throw new APIError('FORBIDDEN', {
-        //     message: 'api.auth.unauthorized_access',
-        //   });
-        // }
+        if (user.role !== SystemRoles.ADMIN) {
+          throw new APIError('FORBIDDEN', {
+            message: 'api.auth.unauthorized_access',
+          });
+        }
 
         return; // Allow sign-in/sign-up to proceed
       }

@@ -2,10 +2,10 @@ import { prisma } from '@repo/database';
 import { resend } from '@repo/email';
 import { EmailOtpTemplate, ResetPasswordEmailTemplate } from '@repo/email/emails';
 import { AgencyMemberStatus, AgencyStatus, SystemRoles } from '@repo/shared/constants';
-import { betterAuth } from 'better-auth';
+import { APIError, betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { nextCookies } from 'better-auth/next-js';
-import { admin, customSession, emailOTP, openAPI } from 'better-auth/plugins';
+import { admin, createAuthMiddleware, customSession, emailOTP, openAPI } from 'better-auth/plugins';
 import { TRUSTED_ORIGINS } from '../constants';
 import { keys } from '../keys';
 
@@ -37,6 +37,41 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: 'postgresql',
   }),
+  hooks: {
+    before: createAuthMiddleware(async (ctx) => {
+      if (
+        ['/session', '/get-session', '/sign-out'].includes(ctx.path) ||
+        ctx.path.startsWith('/two-factor') ||
+        ctx.path.startsWith('/email-otp') ||
+        ctx.path.startsWith('/admin')
+      ) {
+        return;
+      }
+
+      if (ctx.path === '/sign-in/email') {
+        let email: string | undefined;
+        if (ctx.body && typeof ctx.body === 'object') {
+          email = ctx.body.email;
+        }
+        if (!email) {
+          throw new APIError('BAD_REQUEST', { message: 'api.auth.email_required' });
+        }
+
+        const user = await prisma.user.findFirst({
+          where: { email },
+          select: { id: true, email: true, role: true },
+        });
+
+        if (!user) {
+          throw new APIError('FORBIDDEN', { message: 'api.auth.no_account_found' });
+        }
+
+        if (![SystemRoles.AGENCY, SystemRoles.AGENCY_MANAGER].includes(user.role as SystemRoles)) {
+          throw new APIError('FORBIDDEN', { message: 'api.auth.unauthorized_access' });
+        }
+      }
+    }),
+  },
   databaseHooks: {
     user: {
       create: {
