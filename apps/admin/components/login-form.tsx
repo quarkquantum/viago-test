@@ -25,62 +25,55 @@ export const LoginForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    console.log('[login] NEXT_PUBLIC_API_URL:', apiUrl);
     console.log('[login] Attempting login with email:', email);
+
+    // --- RAW FETCH: bypass the auth client entirely to see real headers ---
+    const rawSignIn = await fetch(`${apiUrl}/api/admin/auth/sign-in/email`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+    console.log('[login] raw sign-in status:', rawSignIn.status);
+    const allRawHeaders: Record<string, string> = {};
+    rawSignIn.headers.forEach((v, k) => { allRawHeaders[k] = v; });
+    console.log('[login] raw sign-in response headers:', JSON.stringify(allRawHeaders));
+    console.log('[login] raw set-cookie header:', rawSignIn.headers.get('set-cookie'));
+    const rawBody = await rawSignIn.json().catch(() => null);
+    console.log('[login] raw sign-in body:', JSON.stringify(rawBody));
+    console.log('[login] document.cookie after raw fetch:', document.cookie || '(empty)');
+
+    // --- SESSION CHECK: verify cookie was stored ---
+    const rawSession = await fetch(`${apiUrl}/api/admin/auth/get-session`, {
+      credentials: 'include',
+      cache: 'no-store',
+    });
+    console.log('[login] raw get-session status:', rawSession.status);
+    const rawSessionBody = await rawSession.text();
+    console.log('[login] raw get-session body:', rawSessionBody);
+    // --- END RAW FETCH ---
+
     await adminAuthClient.signIn.email(
-      {
-        email,
-        password,
-      },
+      { email, password },
       {
         onError: (ctx) => {
-          console.log('[login] Error:', ctx.error);
+          console.log('[login] client error:', ctx.error);
           toast.error(ctx.error.message);
           setLoading(false);
         },
         onSuccess: async (ctx) => {
-          console.log('[login] Success ctx.data:', ctx.data);
-          console.log('[login] response headers:', Object.fromEntries((ctx.response?.headers ?? new Headers()).entries()));
-          console.log('[login] twoFactorRedirect:', ctx.data.twoFactorRedirect);
-          console.log('[login] Cookies after signIn:', document.cookie || '(empty)');
-
-          // Directly fetch sign-in to inspect raw response headers
-          const rawResp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/auth/get-session`, {
-            credentials: 'include',
-            cache: 'no-store',
-          });
-          console.log('[login] raw get-session status:', rawResp.status);
-          console.log('[login] raw get-session set-cookie:', rawResp.headers.get('set-cookie'));
-          const rawBody = await rawResp.text();
-          console.log('[login] raw get-session body:', rawBody);
-
-          // Check session immediately after sign-in
-          const sessionCheck = await adminAuthClient.getSession();
-          console.log('[login] getSession() after signIn:', JSON.stringify(sessionCheck?.data));
-          console.log('[login] getSession error:', sessionCheck?.error);
-
+          console.log('[login] client onSuccess, twoFactorRedirect:', ctx.data.twoFactorRedirect);
           if (ctx.data.twoFactorRedirect) {
-            console.log('[login] 2FA required, sending OTP...');
             const { data, error } = await adminAuthClient.twoFactor.sendOtp();
-            console.log('[login] sendOtp result:', data, 'error:', error);
             setLoading(false);
-            if (error) {
-              toast.error(error.message);
-              return;
-            }
-            if (data?.status) {
-              toast.success(t('otpSent'));
-              router.push('/otp-verification');
-              return;
-            }
+            if (error) { toast.error(error.message); return; }
+            if (data?.status) { toast.success(t('otpSent')); router.push('/otp-verification'); }
             return;
           }
-
-          console.log('[login] No 2FA, redirecting to /');
           setLoading(false);
-          console.log('[login] Waiting for cookie to be set...');
-          await new Promise((r) => setTimeout(r, 500));
-          console.log('[login] All cookies after wait:', document.cookie);
-          console.log('[login] Now redirecting to /fr/');
           window.location.href = '/fr/';
         },
       }
