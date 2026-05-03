@@ -80,12 +80,10 @@
       "bus": "Bus",
       "identityDocumentType": "Type de pièce d'identité",
       "identityDocumentNumber": "Numéro de pièce",
-      "passenger": "Passager"
-    },
+      "passenger": "Passager",
       "logo": "Logo",
       "description": "Description",
       "owner": "Propriétaire",
-      "passenger": "Passager",
       "trip": "Voyage",
       "seat": "Siège",
       "price": "Prix",

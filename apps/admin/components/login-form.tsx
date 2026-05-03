@@ -26,8 +26,8 @@ export const LoginForm = () => {
     e.preventDefault();
     setLoading(true);
 
-    console.log('[login] NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL ?? 'UNDEFINED - not set at build time!');
     console.log('[login] attempting email:', email);
+    console.log('[login] NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL ?? 'UNDEFINED - not set at build time!');
 
     await adminAuthClient.signIn.email(
       { email, password },
