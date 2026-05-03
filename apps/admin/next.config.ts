@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/admin/auth/:path*',
+        destination: `${process.env.NEXT_PUBLIC_API_URL}/api/admin/auth/:path*`,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
