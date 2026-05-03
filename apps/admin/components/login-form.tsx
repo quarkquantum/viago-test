@@ -39,15 +39,23 @@ export const LoginForm = () => {
         },
         onSuccess: async (ctx) => {
           console.log('[login] Success ctx.data:', ctx.data);
-          console.log('[login] twoFactorEnabled:', ctx.data.twoFactorEnabled);
+          console.log('[login] response headers:', Object.fromEntries((ctx.response?.headers ?? new Headers()).entries()));
           console.log('[login] twoFactorRedirect:', ctx.data.twoFactorRedirect);
-          console.log('[login] Cookies immediately after signIn:', document.cookie);
-          console.log('[login] Cookies (split):', document.cookie.split(';').map(c => c.trim()));
+          console.log('[login] Cookies after signIn:', document.cookie || '(empty)');
+
+          // Directly fetch sign-in to inspect raw response headers
+          const rawResp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/auth/get-session`, {
+            credentials: 'include',
+            cache: 'no-store',
+          });
+          console.log('[login] raw get-session status:', rawResp.status);
+          console.log('[login] raw get-session set-cookie:', rawResp.headers.get('set-cookie'));
+          const rawBody = await rawResp.text();
+          console.log('[login] raw get-session body:', rawBody);
 
           // Check session immediately after sign-in
           const sessionCheck = await adminAuthClient.getSession();
-          console.log('[login] getSession() result after signIn:', sessionCheck);
-          console.log('[login] getSession data:', sessionCheck?.data);
+          console.log('[login] getSession() after signIn:', JSON.stringify(sessionCheck?.data));
           console.log('[login] getSession error:', sessionCheck?.error);
 
           if (ctx.data.twoFactorRedirect) {
