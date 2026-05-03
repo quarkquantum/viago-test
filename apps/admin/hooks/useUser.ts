@@ -20,8 +20,10 @@ export type User = {
 };
 
 export const useUser = () => {
-  const { data } = adminAuthClient.useSession();
+  const { data, isPending, error } = adminAuthClient.useSession();
+  console.log('[useUser] isPending:', isPending, '| data:', data, '| error:', error);
   if (!data?.user) {
+    console.log('[useUser] No user in session data — returning null');
     return null;
   }
 

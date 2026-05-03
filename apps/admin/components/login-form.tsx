@@ -41,7 +41,14 @@ export const LoginForm = () => {
           console.log('[login] Success ctx.data:', ctx.data);
           console.log('[login] twoFactorEnabled:', ctx.data.twoFactorEnabled);
           console.log('[login] twoFactorRedirect:', ctx.data.twoFactorRedirect);
-          console.log('[login] Cookie before 2FA check:', document.cookie);
+          console.log('[login] Cookies immediately after signIn:', document.cookie);
+          console.log('[login] Cookies (split):', document.cookie.split(';').map(c => c.trim()));
+
+          // Check session immediately after sign-in
+          const sessionCheck = await adminAuthClient.getSession();
+          console.log('[login] getSession() result after signIn:', sessionCheck);
+          console.log('[login] getSession data:', sessionCheck?.data);
+          console.log('[login] getSession error:', sessionCheck?.error);
 
           if (ctx.data.twoFactorRedirect) {
             console.log('[login] 2FA required, sending OTP...');
@@ -63,9 +70,9 @@ export const LoginForm = () => {
           console.log('[login] No 2FA, redirecting to /');
           setLoading(false);
           console.log('[login] Waiting for cookie to be set...');
-          await new Promise((r) => setTimeout(r, 1000));
-          console.log('[login] All cookies:', document.cookie);
-          console.log('[login] Now redirecting');
+          await new Promise((r) => setTimeout(r, 500));
+          console.log('[login] All cookies after wait:', document.cookie);
+          console.log('[login] Now redirecting to /fr/');
           window.location.href = '/fr/';
         },
       }
