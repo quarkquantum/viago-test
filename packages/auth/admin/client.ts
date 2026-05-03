@@ -6,5 +6,8 @@ import type { auth } from './server';
 export const adminAuthClient = createAuthClient({
   basePath: '/api/admin/auth',
   baseURL: process.env.NEXT_PUBLIC_API_URL,
+  fetchOptions: {
+    credentials: 'include',
+  },
   plugins: [emailOTPClient(), customSessionClient<typeof auth>(), twoFactorClient(), adminClient()],
 });

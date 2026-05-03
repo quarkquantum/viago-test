@@ -25,10 +25,10 @@ app.use('*', honoLogger());
 
 // CORS
 const corsOptions: Parameters<typeof cors>[0] = {
-  allowHeaders: ['Content-Type', 'Authorization'],
+  allowHeaders: ['Content-Type', 'Authorization', 'Cookie'],
   allowMethods: ['POST', 'GET', 'DELETE', 'PUT', 'PATCH', 'OPTIONS'],
   credentials: true,
-  exposeHeaders: ['Content-Length'],
+  exposeHeaders: ['Content-Length', 'Set-Cookie'],
   origin: (origin) => origin,
 };
 
