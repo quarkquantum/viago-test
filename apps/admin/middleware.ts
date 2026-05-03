@@ -1,35 +1,38 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import createIntlMiddleware from 'next-intl/middleware';
-import { env } from './env';
 import { routing } from './i18n/routing';
 
 const intlMiddleware = createIntlMiddleware(routing);
 const LOCALE_PATTERN = /^\/(en|fr)(\/|$)/;
 
+// Use NEXT_PUBLIC_API_URL — available at build time in both server and edge runtime.
+// API_INTERNAL_URL is only useful when there's a real internal network (e.g. Docker),
+// on Vercel it would resolve to localhost which has nothing listening.
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? process.env.API_INTERNAL_URL ?? 'http://localhost:3000';
+
 async function getUserSession(request: NextRequest) {
   const cookies = request.headers.get('cookie');
-  console.log('[proxy] getUserSession - cookies:', cookies);
-  console.log('[proxy] getUserSession - URL:', `${env.API_INTERNAL_URL}/api/admin/auth/get-session`);
+  const url = `${API_URL}/api/admin/auth/get-session`;
+  console.log('[proxy] get-session URL:', url);
+  console.log('[proxy] cookies forwarded:', cookies ? 'yes' : 'none');
   try {
-    const response = await fetch(`${env.API_INTERNAL_URL}/api/admin/auth/get-session`, {
+    const response = await fetch(url, {
       headers: {
         cookie: cookies || '',
       },
       cache: 'no-store',
     });
-    console.log('[proxy] get-session response status:', response.status);
+    console.log('[proxy] get-session status:', response.status);
     const text = await response.text();
-    console.log('[proxy] get-session response body:', text);
+    console.log('[proxy] get-session body:', text);
     if (!response.ok) {
       return;
     }
-
     const session = JSON.parse(text);
-    console.log('[proxy] Session parsed:', session);
     return session?.session || undefined;
   } catch (e) {
-    console.log('[proxy] Session error:', e);
+    console.log('[proxy] get-session error:', e);
     return;
   }
 }
