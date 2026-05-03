@@ -45,15 +45,19 @@ export const LoginForm = () => {
 
           if (ctx.data.twoFactorRedirect) {
             console.log('[login] 2FA required, sending OTP...');
-            const { data } = await adminAuthClient.twoFactor.sendOtp();
-            console.log('[login] sendOtp result:', data);
-            console.log('[login] Cookie after sendOtp:', document.cookie);
+            const { data, error } = await adminAuthClient.twoFactor.sendOtp();
+            console.log('[login] sendOtp result:', data, 'error:', error);
+            setLoading(false);
+            if (error) {
+              toast.error(error.message);
+              return;
+            }
             if (data?.status) {
               toast.success(t('otpSent'));
               router.push('/otp-verification');
-              setLoading(false);
               return;
             }
+            return;
           }
 
           console.log('[login] No 2FA, redirecting to /');

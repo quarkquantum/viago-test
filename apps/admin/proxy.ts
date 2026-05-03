@@ -16,7 +16,6 @@ async function getUserSession(request: NextRequest) {
       headers: {
         cookie: cookies || '',
       },
-      credentials: 'include',
     });
     console.log('[proxy] get-session response status:', response.status);
     const text = await response.text();
