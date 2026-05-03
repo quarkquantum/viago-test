@@ -193,7 +193,7 @@ export const auth = betterAuth({
           image: true,
           profile: true,
         },
-        where: { id: user.id, role: SystemRoles.ADMIN },
+        where: { id: user.id },
       });
       return {
         session,

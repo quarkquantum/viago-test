@@ -16,6 +16,7 @@ async function getUserSession(request: NextRequest) {
       headers: {
         cookie: cookies || '',
       },
+      cache: 'no-store',
     });
     console.log('[proxy] get-session response status:', response.status);
     const text = await response.text();
@@ -26,7 +27,7 @@ async function getUserSession(request: NextRequest) {
 
     const session = JSON.parse(text);
     console.log('[proxy] Session parsed:', session);
-    return session?.user || undefined;
+    return session?.session || undefined;
   } catch (e) {
     console.log('[proxy] Session error:', e);
     return;
