@@ -9,7 +9,7 @@ const LOCALE_PATTERN = /^\/(en|fr)(\/|$)/;
 // Use NEXT_PUBLIC_API_URL — available at build time in both server and edge runtime.
 // API_INTERNAL_URL is only useful when there's a real internal network (e.g. Docker),
 // on Vercel it would resolve to localhost which has nothing listening.
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? process.env.API_INTERNAL_URL ?? 'http://localhost:3000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3000';
 
 async function getUserSession(request: NextRequest) {
   const cookies = request.headers.get('cookie');
@@ -37,12 +37,10 @@ async function getUserSession(request: NextRequest) {
   }
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   console.log('[proxy] Request:', request.nextUrl.pathname);
-  // First handle i18n routing
   const intlResponse = intlMiddleware(request);
 
-  // Get the locale from the pathname
   const localeMatch = request.nextUrl.pathname.match(LOCALE_PATTERN);
   const locale = localeMatch ? localeMatch[1] : 'fr';
 
@@ -58,7 +56,7 @@ export async function middleware(request: NextRequest) {
 
   const session = await getUserSession(request);
 
-  console.log('[proxy] session result:', session);
+  console.log('[proxy] session result:', !!session);
 
   if (
     pathnameWithoutLocale === '/login' ||
@@ -66,12 +64,9 @@ export async function middleware(request: NextRequest) {
     pathnameWithoutLocale === '/forgot-password' ||
     pathnameWithoutLocale === '/reset-password'
   ) {
-    console.log('[proxy] Auth page, has session:', !!session);
     if (session) {
-      console.log('[proxy] Redirecting to /', locale);
       return NextResponse.redirect(new URL(`/${locale}`, request.url));
     }
-
     return intlResponse;
   }
 
