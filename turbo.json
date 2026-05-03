@@ -5,7 +5,23 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_APP_URL",
+        "NEXT_PUBLIC_COOKIE_DOMAIN",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "RESEND_TOKEN",
+        "RESEND_FROM",
+        "NODE_ENV",
+        "NOTCH_PAY_HASH_KEY",
+        "NOTCH_PAY_PUBLIC_KEY",
+        "NOTCH_PAY_PRIVATE_KEY",
+        "DISABLE_SIGNUP",
+        "POSTGRES_URL",
+        "API_INTERNAL_URL"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]

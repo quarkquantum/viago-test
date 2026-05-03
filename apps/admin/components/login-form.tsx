@@ -26,35 +26,8 @@ export const LoginForm = () => {
     e.preventDefault();
     setLoading(true);
 
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    console.log('[login] NEXT_PUBLIC_API_URL:', apiUrl);
-    console.log('[login] Attempting login with email:', email);
-
-    // --- RAW FETCH: bypass the auth client entirely to see real headers ---
-    const rawSignIn = await fetch(`${apiUrl}/api/admin/auth/sign-in/email`, {
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
-    console.log('[login] raw sign-in status:', rawSignIn.status);
-    const allRawHeaders: Record<string, string> = {};
-    rawSignIn.headers.forEach((v, k) => { allRawHeaders[k] = v; });
-    console.log('[login] raw sign-in response headers:', JSON.stringify(allRawHeaders));
-    console.log('[login] raw set-cookie header:', rawSignIn.headers.get('set-cookie'));
-    const rawBody = await rawSignIn.json().catch(() => null);
-    console.log('[login] raw sign-in body:', JSON.stringify(rawBody));
-    console.log('[login] document.cookie after raw fetch:', document.cookie || '(empty)');
-
-    // --- SESSION CHECK: verify cookie was stored ---
-    const rawSession = await fetch(`${apiUrl}/api/admin/auth/get-session`, {
-      credentials: 'include',
-      cache: 'no-store',
-    });
-    console.log('[login] raw get-session status:', rawSession.status);
-    const rawSessionBody = await rawSession.text();
-    console.log('[login] raw get-session body:', rawSessionBody);
-    // --- END RAW FETCH ---
+    console.log('[login] NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL ?? 'UNDEFINED - not set at build time!');
+    console.log('[login] attempting email:', email);
 
     await adminAuthClient.signIn.email(
       { email, password },
@@ -66,6 +39,7 @@ export const LoginForm = () => {
         },
         onSuccess: async (ctx) => {
           console.log('[login] client onSuccess, twoFactorRedirect:', ctx.data.twoFactorRedirect);
+          console.log('[login] document.cookie:', document.cookie || '(empty)');
           if (ctx.data.twoFactorRedirect) {
             const { data, error } = await adminAuthClient.twoFactor.sendOtp();
             setLoading(false);
