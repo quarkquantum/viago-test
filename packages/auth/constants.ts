@@ -14,6 +14,7 @@ export const TRUSTED_ORIGINS = [
   'https://viago-monorepo-agency.vercel.app',
   'https://viago-monorepo-alpha.vercel.app',
   'https://viago-monorepo-cashier.vercel.app',
+  'https://viago-test-admin.vercel.app',
   // Production domain URLs
   'https://velora-viago.com',
   'https://www.velora-viago.com',
